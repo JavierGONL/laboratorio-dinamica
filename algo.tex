@@ -1,0 +1,125 @@
+\documentclass[12pt]{article}
+
+% Paquetes
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\section{Vibración Forzada-Amortiguada (Configuración Abierta)}
+
+En esta sección se presentan los resultados experimentales obtenidos para la condición 
+de \textbf{amortiguador abierto} con una frecuencia de excitación aproximada de 
+\(\,f \approx \SI{4.18}{Hz}\). Los valores experimentales fueron calculados a partir de 
+las señales registradas del LVDT (Canal A) y el sensor de proximidad (Canal B) 
+proporcionados por el sistema de adquisición de datos.
+
+\subsection{Cálculo de valores experimentales}
+
+A partir de los seis archivos CSV suministrados, se obtuvo para cada corrida la amplitud
+del LVDT, el período \(T\), la frecuencia forzada \(f\) y el desfase 
+experimental \(\varphi^{exp}\). 
+
+Los valores promediados fueron:
+
+\[
+A_{\text{LVDT,prom}} = 5.31\ \text{V},\qquad
+T_{\text{prom}} = 0.239\ \text{s},\qquad
+f_{\text{prom}} = 4.18\ \text{Hz},
+\]
+\[
+\varphi^{exp}_{\text{prom}} = -55.8^\circ.
+\]
+
+\subsection{Ecuaciones relevantes}
+
+\noindent \textbf{Relación de frecuencias}:
+\[
+r = \frac{\omega_f}{\omega_n} = 
+\frac{2\pi f}{2\pi f_n} = \frac{f}{f_n}.
+\]
+
+\noindent \textbf{Amplitud angular experimental}:
+\[
+X_m^{exp} = A_{\text{LVDT}}\, S_{\text{LVDT}}, \qquad
+\theta_m^{exp} = \frac{X_m^{exp}}{L}.
+\]
+
+\noindent \textbf{Factor de amplificación teórico}:
+\[
+FA(r) = \frac{1}{\sqrt{(1-r^2)^2 + (2\zeta r)^2}}.
+\]
+
+\noindent \textbf{Desfase teórico}:
+\[
+\tan\varphi^{teo} = \frac{2\zeta r}{1 - r^2}.
+\]
+
+\noindent \textbf{Desfase experimental} (según la guía):
+\[
+\varphi^{exp} = 
+-\,\frac{\Delta t}{T} \, 2\pi - \frac{\pi}{2}.
+\]
+
+
+\subsection{Cuadro de resultados (Configuración Abierta, 4.18 Hz)}
+
+En la Tabla \ref{tab:cuadroX} se presenta el resumen de los resultados experimentales
+junto con los espacios destinados a los valores que dependen de la calibración del LVDT,
+la frecuencia natural \(f_n\), el amortiguamiento \(\zeta\) y la fuerza excitadora \(P_m\).
+
+\begin{table}[h!]
+\centering
+\caption{Resultados experimentales y teóricos para la condición Abierta (4.18 Hz).}
+\label{tab:cuadroX}
+\begin{tabular}{lccccccccc}
+\toprule
+Caso & \(f\) [Hz] & \(P_m\) [N] & \(\theta_m^{exp}\) [°] &
+\(\theta_m^{teo}\) [°] & FA & \(r\) &
+\(\varphi^{teo}\) [°] & \(\varphi^{exp}\) [°] \\
+\midrule
+Abierta & 4.18 & \_\_\_ & \_\_\_ & \_\_\_ & \_\_\_ & \_\_\_ &
+\_\_\_ & -55.8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Gráfica del factor de amplificación}
+
+La gráfica solicitada por la guía consiste en representar el factor de amplificación FA
+contra la razón de frecuencias \(r = \omega_f / \omega_n\), incluyendo:
+
+\begin{itemize}
+    \item Curva teórica del FA para la condición Abierta.
+    \item Punto experimental correspondiente a \(f = 4.18\ \text{Hz}\).
+\end{itemize}
+
+Una vez se conozca \(f_n\) y \(\zeta\), la curva teórica se obtiene a partir de:
+
+\[
+FA(r) = \frac{1}{\sqrt{(1-r^2)^2 + (2\zeta r)^2}}.
+\]
+
+El punto experimental se coloca en:
+\[
+(r_{exp},\, FA_{exp}) =
+\left(\frac{f}{f_n},\ \frac{\theta_m^{exp}}{\theta_{estática}}\right).
+\]
+
+\section{Conclusiones}
+
+\begin{itemize}
+    \item La frecuencia forzada promedio obtenida del sistema fue 
+    \(f = \SI{4.18}{Hz}\), consistente con el valor programado.
+    \item El desfase experimental promedio encontrado fue 
+    \(\varphi^{exp} \approx -55.8^\circ\).
+    \item Los valores teóricos dependen de \(f_n\), \(\zeta\) y la calibración del LVDT,
+    por lo que deben completarse al finalizar los cálculos correspondientes.
+\end{itemize}
+
+\end{document}
