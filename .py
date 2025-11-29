@@ -186,5 +186,5 @@ def osciloscope_plot(path):
 
 if __name__ == "__main__":
     # Ruta por defecto: carpeta con múltiples CSV de Libre-Amortiguiado-Abierta
-    path = r"C:\Users\lunit\OneDrive\Desktop\laboratorio dinamica\G12\Forzada-amortiguada-abierta4.2hz"
+    path = r"C:\Users\lunit\OneDrive\Desktop\laboratorio dinamica\G12\Forzada-amortiguada-abierta4.45hz"
     osciloscope_plot(path)
