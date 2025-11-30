@@ -1,0 +1,307 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{hyperref}
+
+\title{Informe de Laboratorio: Vibraciones Mecánicas\\
+Sección: Forzada Amortiguada}
+\author{Nombre: \\ Matrícula: \\ Grupo: }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+% --- INICIO DEL INFORME ---
+% =========================================================
+% SECCIÓN: Vibración Forzada-Amortiguada
+% (Experimento 4)
+% =========================================================
+
+\section{Vibración forzada-amortiguada}
+
+%----------------------------------------------------------
+\subsection{Modelo teórico}
+% Aquí debes escribir la deducción del modelo para el banco experimental,
+% adaptando del modelo masa-resorte-amortiguador al sistema rotacional.
+
+El sistema de un grado de libertad sometido a una fuerza armónica con
+amortiguamiento se modela mediante la ecuación:
+
+\begin{equation}
+    m\,\ddot{x}(t) + c\,\dot{x}(t) + k\,x(t) = P_m \cos(\omega_f t)
+    \label{eq:forzada_amortiguada_lineal}
+\end{equation}
+
+% Si quieres escribir el modelo rotacional, puedes cambiar m,k por I,k_\theta, etc.
+% y x(t) por \theta(t).
+
+La solución en régimen permanente se escribe como:
+
+\begin{equation}
+    x(t) = X \cos(\omega_f t - \varphi)
+\end{equation}
+
+donde la amplitud de respuesta es:
+
+\begin{equation}
+    X = \dfrac{P_m}{\sqrt{(k - m \omega_f^2)^2 + (c \,\omega_f)^2}}
+    \label{eq:amplitud_forzada_amortiguada}
+\end{equation}
+
+y el desfase entre la fuerza y la respuesta es:
+
+\begin{equation}
+    \tan \varphi = 
+    \dfrac{2\,\zeta\,r}{1 - r^2}
+    \qquad
+    \text{con} \quad
+    r = \dfrac{\omega_f}{\omega_n}, \quad
+    \zeta = \dfrac{c}{C_{\text{crítico}}}
+    \label{eq:desfase_teorico}
+\end{equation}
+
+El factor de amplificación se define como:
+
+\begin{equation}
+    FA = \dfrac{X}{X_{\text{estático}}}
+       = \dfrac{1}{\sqrt{(1 - r^2)^2 + (2 \zeta r)^2}}
+    \label{eq:FA_teorico}
+\end{equation}
+
+La fuerza de excitación debida a la masa excéntrica se calcula como:
+
+\begin{equation}
+    P_m = M_h\, r\, \omega_f^2
+    \label{eq:F_exc}
+\end{equation}
+
+donde $M_h$ es la masa equivalente del orificio, $r$ es el radio de excentricidad
+y $\omega_f$ la velocidad angular de las masas excéntricas.
+
+% (Opcional) Aquí puedes escribir la versión ROTACIONAL del modelo,
+% usando el momento de inercia total I, el brazo L, etc.
+%----------------------------------------------------------
+
+\subsection{Descripción del montaje experimental}
+
+% Explica brevemente que es el mismo sistema de los experimentos anteriores
+% pero con amortiguador instalado en configuraciones abierta y cerrada.
+
+El montaje corresponde al sistema del banco HVT12 con:
+
+\begin{itemize}
+    \item Viga rígida apoyada en un pivote.
+    \item Resorte lineal con constante elástica $k = [\dots]\ \text{kN/m}$.
+    \item Motor con masas excéntricas HAC120.
+    \item Sistema de amortiguamiento con discos en configuración:
+          \textbf{abierta} y \textbf{cerrada}.
+    \item Sensor LVDT para medir el desplazamiento del extremo de la viga
+          y convertirlo en ángulo de oscilación $\theta$.
+\end{itemize}
+
+%----------------------------------------------------------
+
+\subsection{Procedimiento experimental}
+
+% Aquí solo dejas el esquema; luego completas detalles (valores, etc.).
+
+\begin{enumerate}
+    \item Configurar el amortiguador en la posición \textbf{abierta}.
+    \item Encender el motor y seleccionar una frecuencia $f$ cercana a la
+          frecuencia natural $f_n$ (diferencia máxima de $0.3\,$Hz).
+    \item Esperar a que el sistema alcance régimen permanente.
+    \item Registrar simultáneamente:
+          \begin{itemize}
+              \item Señal del LVDT (desplazamiento / ángulo).
+              \item Señal del sensor de proximidad (referencia de fase).
+          \end{itemize}
+    \item Repetir el procedimiento para al menos tres frecuencias diferentes
+          en configuración \textbf{abierta}.
+    \item Repetir los pasos anteriores para la configuración \textbf{cerrada}
+          del amortiguador.
+    \item Exportar los datos en formato \texttt{.csv} para su análisis.
+\end{enumerate}
+
+%----------------------------------------------------------
+
+\subsection{Procesamiento de datos}
+
+% En esta subsección describes qué cálculos vas a hacer con los datos medidos.
+% Deja aquí las fórmulas y luego rellenas con tus resultados reales.
+
+\begin{enumerate}
+    \item Convertir las frecuencias forzadas $f$ a frecuencia angular:
+    \begin{equation}
+        \omega_f = 2\pi f
+    \end{equation}
+
+    \item Calcular la relación de frecuencias:
+    \begin{equation}
+        r = \dfrac{\omega_f}{\omega_n}
+    \end{equation}
+
+    \item Calcular la fuerza de excitación usando la ecuación
+    \eqref{eq:F_exc} con:
+    \[
+        M_h = 56.16\ \text{g}, \qquad r = 45\ \text{mm}
+        % (puedes ponerlos en SI en tu informe)
+    \]
+
+    \item Obtener el ángulo máximo experimental $\theta^{\text{exp}}_m$
+          a partir de la señal del LVDT:
+          % Explica brevemente cómo lo haces (pico a pico, FFT, etc.)
+          \begin{equation}
+              \theta^{\text{exp}}_m = \arctan\left(\dfrac{\delta_{\max}}{d}\right)
+          \end{equation}
+          donde $\delta_{\max}$ es el desplazamiento máximo y
+          $d$ la distancia del LVDT al pivote.
+
+    \item Calcular la amplitud teórica $\theta^{\text{teo}}_m$ a partir de
+          la ecuación \eqref{eq:amplitud_forzada_amortiguada} y la
+          correspondiente relación entre desplazamiento y ángulo.
+
+    \item Calcular el factor de amplificación:
+    \begin{equation}
+        FA = \dfrac{\theta_m}{\theta_{\text{estática}}}
+    \end{equation}
+    % Aquí puedes especificar cómo obtienes \theta_estática.
+
+    \item Calcular el desfase teórico usando \eqref{eq:desfase_teorico}.
+
+    \item Calcular el desfase experimental $\varphi_{\text{exp}}$ usando
+          la diferencia de tiempo $\Delta t$ entre la señal del LVDT y la
+          del sensor de proximidad:
+
+    \begin{equation}
+        \varphi_{\text{exp}} =
+        -\left(\dfrac{\Delta t}{T}\right) 2\pi - \dfrac{\pi}{2}
+        \label{eq:desfase_exp}
+    \end{equation}
+
+    donde $T$ es el período de la excitación.
+\end{enumerate}
+
+%----------------------------------------------------------
+
+\subsection{Resultados}
+
+% Aquí van las tablas y figuras. Te dejo la estructura lista.
+
+\subsubsection*{Tabla de resultados}
+
+\begin{table}[h]
+    \centering
+    \caption{Resultados experimentales y teóricos para vibración forzada-amortiguada}
+    \label{tab:forzada_amortiguada}
+    \begin{tabular}{lcccccccc}
+        \hline
+        Caso & $f$ [Hz] & $P_m$ [N] & $\theta^{\text{exp}}_m$ [°] &
+        $\theta^{\text{teo}}_m$ [°] & $FA$ &
+        $r = \omega_f / \omega_n$ &
+        $\varphi_{\text{teo}}$ [°] & $\varphi_{\text{exp}}$ [°] \\
+        \hline
+        Abierta & 4.2 & 0.0667 & 0.6878 & 7.1843 & 0.0062 & 0.6642 & 0.0065 & -2.3020 \\
+        Abierta & 4.3 & 0.0683 & 0.6878 & 7.1843 & 0.0060 & 0.6800 & 0.0070 & -4.5617 \\
+        Abierta & 4.45 & 0.0707 & 0.6878 & 7.1843 & 0.0058 & 0.7038 & 0.0077 & -3.4542 \\
+        Cerrada & 4.2 & 0.0667 & 0.6878 & 7.1843 & 0.0062 & 0.6642 & 0.0065 & -4.5506 \\
+        Cerrada & 4.3 & 0.0683 & 0.6878 & 7.1843 & 0.0060 & 0.6800 & 0.0070 & -4.0398 \\
+        Cerrada & 4.45 & 0.0707 & 0.6878 & 7.1843 & 0.0058 & 0.7038 & 0.0077 & -3.3399 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection*{Datos adicionales}
+\begin{table}[h]
+    \centering
+    \caption{Datos adicionales del sistema}
+    \label{tab:datos_adicionales}
+    \begin{tabular}{cc}
+        \hline
+        $\omega_f$ & $\omega_n$ \\
+        \hline
+        26.3894 & 39.729 \\
+        27.0177 & 39.729 \\
+        27.9602 & 39.729 \\
+        26.3894 & 39.729 \\
+        27.0177 & 39.729 \\
+        27.9602 & 39.729 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection*{Gráficas}
+
+\begin{figure}[h]
+    \centering
+    %\includegraphics[width=0.8\textwidth]{FA_vs_r_abierta_cerrada.pdf}
+    \caption{Curvas de factor de amplificación $FA$ en función de
+             $\omega_f/\omega_n$ para las configuraciones abierta y cerrada.
+             % ---> Aquí describe brevemente qué curva corresponde a qué configuración.
+    }
+    \label{fig:FA_vs_r}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    %\includegraphics[width=0.8\textwidth]{desfase_vs_r.pdf}
+    \caption{Comparación del ángulo de desfase teórico y experimental
+             en función de $\omega_f/\omega_n$.}
+    \label{fig:desfase_vs_r}
+\end{figure}
+
+%----------------------------------------------------------
+
+\subsection{Análisis de resultados}
+
+% Aquí comentas lo que observas. Te dejo la estructura en ítems para que tú escribas.
+
+\begin{itemize}
+    \item Comparación entre $\theta^{\text{exp}}_m$ y $\theta^{\text{teo}}_m$ para
+          cada configuración (abierta/cerrada). Comentar si las diferencias son
+          pequeñas, moderadas o grandes.
+    \item Comportamiento del FA alrededor de la resonancia
+          ($r \approx 1$) y efecto del aumento de amortiguamiento
+          (disminución del pico de resonancia y ensanchamiento de la curva).
+    \item Comparación entre $\varphi_{\text{teo}}$ y $\varphi_{\text{exp}}$:
+          tendencia del desfase desde $0^\circ$ hasta $180^\circ$ al aumentar $r$.
+    \item Discusión del impacto del amortiguador (abierto vs. cerrado) en:
+          \begin{itemize}
+              \item amplitud máxima,
+              \item posición de la frecuencia de pico,
+              \item comportamiento del desfase.
+          \end{itemize}
+\end{itemize}
+
+%----------------------------------------------------------
+
+\subsubsection{Análisis de errores}
+
+% Aquí discutes fuentes de error y su influencia en los resultados.
+
+\begin{itemize}
+    \item Incertidumbre en la medición de la frecuencia $f$ y su efecto en $r$.
+    \item Errores en la calibración del LVDT (sensibilidad, posición inicial).
+    \item Aproximaciones del modelo (linealidad del resorte, amortiguamiento puramente viscoso, etc.).
+    \item Errores al medir $\Delta t$ para el cálculo del desfase experimental.
+    \item Posibles variaciones en los parámetros físicos
+          ($M_h$, $r$, momento de inercia total, etc.).
+\end{itemize}
+
+%----------------------------------------------------------
+
+\subsection{Conclusiones específicas del experimento}
+
+% Escribe aquí 3–5 conclusiones puntuales sobre la vibración forzada-amortiguada,
+% centradas en:
+% - efecto del amortiguamiento,
+% - validación (o no) del modelo teórico,
+% - comportamiento de FA y del desfase.
+
+\end{document}
