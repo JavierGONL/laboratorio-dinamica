@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.11.5)  30 NOV 2025 16:51
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.11.5)  30 NOV 2025 17:41
  restricted system commands enabled.
 **"c:/Users/lunit/OneDrive/Desktop/laboratorio dinamica/Forzada amortiguada"
 ("c:/Users/lunit/OneDrive/Desktop/laboratorio dinamica/Forzada amortiguada.tex"
@@ -439,6 +439,69 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2]
 
 [3]
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.227         $\omega_f$ & $\omega_n$ &
+                                        $\zeta$ \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.229         26.3894 & 39.729 &
+                                 0.00275~(abierta) \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.230         27.0177 & 39.729 &
+                                 0.00275~(abierta) \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.231         27.9602 & 39.729 &
+                                 0.00275~(abierta) \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.232         26.3894 & 39.729 &
+                                 0.00086805~(cerrada) \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.233         27.0177 & 39.729 &
+                                 0.00086805~(cerrada) \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.234         27.9602 & 39.729 &
+                                 0.00086805~(cerrada) \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -479,7 +542,7 @@ cmr12.pfb><C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/cm/cmr8.pfb><C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Forzada amortiguada.pdf (5 pages, 111980 bytes).
+Output written on Forzada amortiguada.pdf (5 pages, 112144 bytes).
 
 PDF statistics: 166 PDF objects out of 1000 (max. 8388607)
  48 named destinations out of 1000 (max. 131072)

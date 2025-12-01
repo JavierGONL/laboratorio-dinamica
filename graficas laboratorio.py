@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-# Definir to_float_series al inicio para que esté disponible en todo el script
 def to_float_series(series):
     s = series.astype(str).str.strip()
     # Reemplazar decimal coma por punto
@@ -18,7 +17,7 @@ def to_float_series(series):
     return pd.to_numeric(s, errors='coerce')
 
 
-def osciloscope_plot(path):
+def osciloscope_plot(path, daley=0.0, combine_channels=False):
     try:
         print("Iniciando generación de gráfica...")
 
@@ -172,6 +171,7 @@ def osciloscope_plot(path):
         plt.close(fig_a)
         print(f"\n✓ Gráfica Canal A generada (todos los CSV juntos)!")
         print(f"Archivo guardado en: {output_path_a}")
+        
         # Gráfica Canal B (si existe)
         if not np.all(np.isnan(canal_b_total)):
             fig_b, ax_b = plt.subplots(figsize=(14, 7))
@@ -187,6 +187,36 @@ def osciloscope_plot(path):
             plt.close(fig_b)
             print(f"✓ Gráfica Canal B generada (todos los CSV)!")
             print(f"Archivo guardado en: {output_path_b}")
+            
+            # Gráfica combinada (ambos canales) si se solicita
+            if combine_channels:
+                fig_combined, ax_combined = plt.subplots(figsize=(14, 7))
+                ax1 = ax_combined
+                ax2 = ax_combined.twinx()
+                
+                line1 = ax1.plot(tiempo_s, smooth(canal_a_total, window=15), linewidth=1.2, color='tab:blue', label='Canal A', antialiased=True)
+                line2 = ax2.plot(tiempo_s, smooth(canal_b_total, window=15), linewidth=1.2, color='tab:red', label='Canal B', antialiased=True)
+                
+                ax1.set_xlabel('Tiempo (s)', fontsize=12)
+                ax1.set_ylabel('Canal A (V)', fontsize=12, color='tab:blue')
+                ax2.set_ylabel('Canal B (mV)', fontsize=12, color='tab:red')
+                ax1.tick_params(axis='y', labelcolor='tab:blue')
+                ax2.tick_params(axis='y', labelcolor='tab:red')
+                ax1.set_title('Canales A y B vs Tiempo - TODOS LOS CSV', fontsize=14, fontweight='bold')
+                ax1.grid(True, alpha=0.25, linestyle='--')
+                ax1.margins(x=0)
+                
+                # Leyenda combinada
+                lines = line1 + line2
+                labels = [l.get_label() for l in lines]
+                ax1.legend(lines, labels, loc='upper right')
+                
+                fig_combined.tight_layout()
+                output_path_combined = os.path.join(os.path.dirname(files_to_use[0]), "todos_A_B_combinados.png")
+                fig_combined.savefig(output_path_combined, dpi=300, bbox_inches='tight')
+                plt.close(fig_combined)
+                print(f"✓ Gráfica combinada (A+B) generada!")
+                print(f"Archivo guardado en: {output_path_combined}")
         else:
             print("Nota: Canal B incompleto o ausente en ambos archivos; se omitió su gráfica.")
 
@@ -197,6 +227,8 @@ def osciloscope_plot(path):
 
 
 if __name__ == "__main__":
-    # Ruta por defecto: carpeta con múltiples CSV de Libre-Amortiguiado-Abierta
-    path = r"C:\Users\lunit\OneDrive\Desktop\laboratorio dinamica\G12\Forzada-amortiguada-abierta4.2hz"
-    osciloscope_plot(path)
+
+    path = r"" # Ruta del csv
+    daley = 0.0  # <-- Aquí puedes cambiar el valor del delay manualmente
+    combine_channels = False  # <-- Cambiar a True para graficar ambos canales juntos
+    osciloscope_plot(path, daley, combine_channels)

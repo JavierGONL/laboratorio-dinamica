@@ -55,7 +55,8 @@ def osciloscope_plot(path):
         last_t = None
         n_segments = len(files_to_use)
         prev_dt = None
-        overlap_n = 400
+        overlap_n = 300
+        
           # número de muestras a solapar/eliminar
         for idx, file_path in enumerate(files_to_use):
             nombre = os.path.basename(file_path)
@@ -186,5 +187,5 @@ def osciloscope_plot(path):
 
 if __name__ == "__main__":
     # Ruta por defecto: carpeta con múltiples CSV de Libre-Amortiguiado-Abierta
-    path = r"C:\Users\lunit\OneDrive\Desktop\laboratorio dinamica\G12\Forzada-amortiguada-abierta4.45hz"
+    path = r"C:\Users\lunit\OneDrive\Desktop\laboratorio dinamica\G12\Libre Amortiguada"
     osciloscope_plot(path)
