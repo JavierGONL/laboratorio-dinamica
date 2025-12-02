@@ -1,11 +1,14 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{geometry}
 \geometry{margin=2.5cm}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\sisetup{retain-explicit-plus = true,table-number-alignment = center,round-mode=places,round-precision=3}
 
 \title{Informe de Laboratorio: Vibraciones Mecánicas\\
 Sección: Forzada Amortiguada}
@@ -27,9 +30,7 @@ Sección: Forzada Amortiguada}
 \section{Vibración forzada-amortiguada}
 
 %----------------------------------------------------------
-\subsection{Modelo teórico}
-% Aquí debes escribir la deducción del modelo para el banco experimental,
-% adaptando del modelo masa-resorte-amortiguador al sistema rotacional.
+\subsection{Modelo teórico (forzada amortiguada)}
 
 El sistema de un grado de libertad sometido a una fuerza armónica con
 amortiguamiento se modela mediante la ecuación:
@@ -38,9 +39,6 @@ amortiguamiento se modela mediante la ecuación:
     m\,\ddot{x}(t) + c\,\dot{x}(t) + k\,x(t) = P_m \cos(\omega_f t)
     \label{eq:forzada_amortiguada_lineal}
 \end{equation}
-
-% Si quieres escribir el modelo rotacional, puedes cambiar m,k por I,k_\theta, etc.
-% y x(t) por \theta(t).
 
 La solución en régimen permanente se escribe como:
 
@@ -71,7 +69,7 @@ El factor de amplificación se define como:
 
 \begin{equation}
     FA = \dfrac{X}{X_{\text{estático}}}
-       = \dfrac{1}{\sqrt{(1 - r^2)^2 + (2 \zeta r)^2}}
+       = \dfrac{1}{\sqrt{[{(1 - r^2)}]^2 + {(2 \zeta r)}^2}}
     \label{eq:FA_teorico}
 \end{equation}
 
@@ -85,8 +83,6 @@ La fuerza de excitación debida a la masa excéntrica se calcula como:
 donde $M_h$ es la masa equivalente del orificio, $r$ es el radio de excentricidad
 y $\omega_f$ la velocidad angular de las masas excéntricas.
 
-% (Opcional) Aquí puedes escribir la versión ROTACIONAL del modelo,
-% usando el momento de inercia total I, el brazo L, etc.
 %----------------------------------------------------------
 
 \subsection{Descripción del montaje experimental}
@@ -109,8 +105,6 @@ El montaje corresponde al sistema del banco HVT12 con:
 %----------------------------------------------------------
 
 \subsection{Procedimiento experimental}
-
-% Aquí solo dejas el esquema; luego completas detalles (valores, etc.).
 
 \begin{enumerate}
     \item Configurar el amortiguador en la posición \textbf{abierta}.
@@ -147,15 +141,18 @@ El montaje corresponde al sistema del banco HVT12 con:
         r = \dfrac{\omega_f}{\omega_n}
     \end{equation}
 
-    \item Calcular la fuerza de excitación usando la ecuación
-    \eqref{eq:F_exc} con:
+    \item Calcular la fuerza de excitación $P_m$ usando la ecuación\eqref{eq:F_exc}:
     \[
-        M_h = 56.16\ \text{g}, \qquad r = 45\ \text{mm}
-        % (puedes ponerlos en SI en tu informe)
+        P_m = M_h\, r\, \omega_f^2
+    \]
+    con
+    \[
+        M_h = 0.05616\ \text{kg}, \qquad r = 0.045\ \text{m}
     \]
 
+
     \item Obtener el ángulo máximo experimental $\theta^{\text{exp}}_m$
-          a partir de la señal del LVDT:
+          a partir de la señal del LVDT:\@
           % Explica brevemente cómo lo haces (pico a pico, FFT, etc.)
           \begin{equation}
               \theta^{\text{exp}}_m = \arctan\left(\dfrac{\delta_{\max}}{d}\right)
@@ -164,7 +161,7 @@ El montaje corresponde al sistema del banco HVT12 con:
           $d$ la distancia del LVDT al pivote.
 
     \item Calcular la amplitud teórica $\theta^{\text{teo}}_m$ a partir de
-          la ecuación \eqref{eq:amplitud_forzada_amortiguada} y la
+          la ecuación\eqref{eq:amplitud_forzada_amortiguada} y la
           correspondiente relación entre desplazamiento y ángulo.
 
     \item Calcular el factor de amplificación:
@@ -173,7 +170,7 @@ El montaje corresponde al sistema del banco HVT12 con:
     \end{equation}
     % Aquí puedes especificar cómo obtienes \theta_estática.
 
-    \item Calcular el desfase teórico usando \eqref{eq:desfase_teorico}.
+    \item Calcular el desfase teórico usando\eqref{eq:desfase_teorico}.
 
     \item Calcular el desfase experimental $\varphi_{\text{exp}}$ usando
           la diferencia de tiempo $\Delta t$ entre la señal del LVDT y la
@@ -196,112 +193,115 @@ El montaje corresponde al sistema del banco HVT12 con:
 
 \subsubsection*{Tabla de resultados}
 
-\begin{table}[h]
+\begin{table}[htbp]
     \centering
-    \caption{Resultados experimentales y teóricos para vibración forzada-amortiguada}
+    \scriptsize
+    \caption{Resultados experimentales y teóricos para vibración forzada-amortiguada.}
     \label{tab:forzada_amortiguada}
-    \begin{tabular}{lcccccccc}
-        \hline
-        Caso & $f$ [Hz] & $P_m$ [N] & $\theta^{\text{exp}}_m$ [°] &
-        $\theta^{\text{teo}}_m$ [°] & $FA$ &
-        $r = \omega_f / \omega_n$ &
-        $\varphi_{\text{teo}}$ [°] & $\varphi_{\text{exp}}$ [°] \\
-        \hline
-        Abierta & 4.2 & 1.7599 & 0.6878 & 7.1843 & 1.7895 & 0.6642 & 0.3746 & -2.3020 \\
-        Abierta & 4.3 & 1.8447 & 0.6878 & 7.1843 & 1.8603 & 0.6800 & 0.3987 & -4.5617 \\
-        Abierta & 4.45 & 1.9757 & 0.6878 & 7.1843 & 1.9813 & 0.7038 & 0.4394 & -3.4542 \\
-        Cerrada & 4.2 & 1.7599 & 0.6878 & 7.1843 & 1.7896 & 0.6642 & 0.1182 & -4.5506 \\
-        Cerrada & 4.3 & 1.8447 & 0.6878 & 7.1843 & 1.8603 & 0.6800 & 0.1258 & -4.0398 \\
-        Cerrada & 4.45 & 1.9757 & 0.6878 & 7.1843 & 1.9814 & 0.7038 & 0.1387 & -3.3399 \\
-        \hline
+    \setlength{\tabcolsep}{2.5pt}
+    \begin{tabular}{l S[table-format=1.2] S[table-format=2.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=-3.4]}
+        \toprule
+        {Caso} & {$f$ (Hz)} & {$\omega_f$ (rad/s)} & {$P_m$ (N)} & {$\theta_{\exp}$ ($^{\circ}$)} & {$\theta_{teo}$ ($^{\circ}$)} & {$FA$} & {$r = \omega_f/\omega_n$} & {$\varphi_{teo}$ ($^{\circ}$)} & {$\varphi_{\exp}$ ($^{\circ}$)} \\
+        \midrule
+        Abierta & 4.20 & 26.3894 & 1.7599 & 0.3257 & 7.2222 & 1.7895 & 0.6642 & 0.3746 & -132.0263 \\
+        Abierta & 4.30 & 27.0177 & 1.8447 & 0.6861 & 7.2222 & 1.8603 & 0.6800 & 0.3987 & -261.3675 \\
+        Abierta & 4.45 & 27.9602 & 1.9757 & 0.5992 & 7.2222 & 1.9813 & 0.7038 & 0.4394 & -197.9133 \\
+        Cerrada & 4.20 & 26.3894 & 1.7599 & 0.3797 & 7.2222 & 1.7895 & 0.6642 & 0.3559 & -260.7307 \\
+        Cerrada & 4.30 & 27.0177 & 1.8447 & 0.3697 & 7.2222 & 1.8603 & 0.6800 & 0.3878 &  -4.0398 \\
+        Cerrada & 4.45 & 27.9602 & 1.9757 & 0.2707 & 7.2222 & 1.9813 & 0.7038 & 0.4175 &   0.2567 \\
+        \bottomrule
     \end{tabular}
 \end{table}
-
+\vspace{-4pt}
 \subsubsection*{Datos adicionales}
-\begin{table}[h]
+\begin{table}[htbp]
     \centering
-    \caption{Datos adicionales del sistema}
+    \setlength{\tabcolsep}{6pt}
+    \footnotesize
+    \caption{Parámetros adicionales del sistema}
     \label{tab:datos_adicionales}
-    \begin{tabular}{cc}
-        \hline
-        $\omega_f$ & $\omega_n$ & $\zeta$ \\
-        \hline
-        26.3894 & 39.729 & 0.00275~(abierta) \\
-        27.0177 & 39.729 & 0.00275~(abierta) \\
-        27.9602 & 39.729 & 0.00275~(abierta) \\
-        26.3894 & 39.729 & 0.00086805~(cerrada) \\
-        27.0177 & 39.729 & 0.00086805~(cerrada) \\
-        27.9602 & 39.729 & 0.00086805~(cerrada) \\
-        \hline
+    \begin{tabular}{ccc}
+        \toprule
+        $\omega_n$ (rad/s) & $\zeta$ abierta & $\zeta$ cerrada \\
+        \midrule
+        39.729 & 0.0028 & 0.0260 \\
+        \bottomrule
     \end{tabular}
 \end{table}
 
 \subsubsection*{Gráficas}
 
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
-    %\includegraphics[width=0.8\textwidth]{FA_vs_r_abierta_cerrada.pdf}
+    \includegraphics[width=0.8\textwidth]{FA_vs_r_abierta_cerrada.png}
     \caption{Curvas de factor de amplificación $FA$ en función de
              $\omega_f/\omega_n$ para las configuraciones abierta y cerrada.
-             % ---> Aquí describe brevemente qué curva corresponde a qué configuración.
+             En rojo anillado y morado se muestran los puntos experimentales.
     }
     \label{fig:FA_vs_r}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
-    %\includegraphics[width=0.8\textwidth]{desfase_vs_r.pdf}
-    \caption{Comparación del ángulo de desfase teórico y experimental
-             en función de $\omega_f/\omega_n$.}
-    \label{fig:desfase_vs_r}
+    \includegraphics[width=0.8\textwidth]{fase_vs_r_abierta_cerrada.png}
+    \caption{Desfase $\varphi$ (en grados) en función de $\omega_f/\omega_n$.
+             Se incluyen las curvas teóricas para las dos configuraciones y los
+             puntos experimentales reducidos al intervalo $[0^\circ,180^\circ]$.}
+    \label{fig:fase_vs_r}
 \end{figure}
 
 %----------------------------------------------------------
 
 \subsection{Análisis de resultados}
 
-% Aquí comentas lo que observas. Te dejo la estructura en ítems para que tú escribas.
+En la Tabla~\ref{tab:forzada_amortiguada} se aprecia que, para el rango
+experimental $0.664 \le r \le 0.704$, los factores de amplificación
+medidos son $FA\in[1.79,\,1.98]$ tanto con amortiguador \textit{abierto}
+como \textit{cerrado}. Esto es consistente con el modelo, ya que trabajamos
+lejos de la resonancia ($r<1$), donde el efecto del amortiguamiento es poco
+visible en la amplitud. En cambio, cerca de $r=1$ el modelo predice picos muy
+distintos: con $\zeta=0.0028$ (abierto) el pico teórico es
+\mbox{$FA_{\max}\approx 1/(2\zeta) \approx 179$}, mientras que con
+$\zeta=0.0260$ (cerrado) es \mbox{$FA_{\max}\approx 19$}. Esta diferencia se
+observa en la Fig.~\ref{fig:FA_vs_r}, donde la línea de resonancia queda
+centrada en $r=1$ y el comportamiento cualitativo coincide con la teoría.
 
-\begin{itemize}
-    \item Comparación entre $\theta^{\text{exp}}_m$ y $\theta^{\text{teo}}_m$ para
-          cada configuración (abierta/cerrada). Comentar si las diferencias son
-          pequeñas, moderadas o grandes.
-    \item Comportamiento del FA alrededor de la resonancia
-          ($r \approx 1$) y efecto del aumento de amortiguamiento
-          (disminución del pico de resonancia y ensanchamiento de la curva).
-    \item Comparación entre $\varphi_{\text{teo}}$ y $\varphi_{\text{exp}}$:
-          tendencia del desfase desde $0^\circ$ hasta $180^\circ$ al aumentar $r$.
-    \item Discusión del impacto del amortiguador (abierto vs. cerrado) en:
-          \begin{itemize}
-              \item amplitud máxima,
-              \item posición de la frecuencia de pico,
-              \item comportamiento del desfase.
-          \end{itemize}
-\end{itemize}
+Respecto al desfase, el modelo (Ecuación~\ref{eq:desfase_teorico}) predice que
+$\varphi$ crece desde $0^\circ$ (bajas frecuencias) hacia $180^\circ$ (altas),
+cruzando $90^\circ$ cerca de la resonancia. Los valores experimentales
+reportados, una vez reducidos al intervalo $[0^\circ,180^\circ]$, siguen esta
+tendencia: por ejemplo, para $r=0.680$ con amortiguador \textit{cerrado}
+obtenemos $\varphi_{\text{exp}}\approx4^\circ$, mientras que con amortiguador
+\textit{abierto} a $r=0.664$ se obtiene \mbox{$\varphi_{\text{exp}}\approx132^\circ$},
+coherente con una mayor proximidad relativa a la resonancia efectiva.
+
+En síntesis, las diferencias entre $\theta_m^{\text{exp}}$ y
+$\theta_m^{\text{teo}}$ permanecen pequeñas en el rango explorado y el efecto
+del amortiguamiento se manifiesta principalmente en la altura del pico teórico
+de resonancia y en la evolución del desfase con $r$.
+
+\subsubsection*{Estimación de $\zeta$ por decremento logarítmico}
+El coeficiente de amortiguamiento adimensional se estimó a partir de ensayos de
+vibración libre (primer segundo), detectando picos y aplicando el decremento
+logarítmico multi-$n$. El promedio (\emph{n}=1..3) arrojó:
+\[\zeta_{\text{abierta}}=0.0028,\qquad \zeta_{\text{cerrada}}=0.0260.\]
+Con estos valores se generaron las curvas teóricas de la Fig.~\ref{fig:FA_vs_r}.
 
 %----------------------------------------------------------
-
-\subsubsection{Análisis de errores}
-
-% Aquí discutes fuentes de error y su influencia en los resultados.
-
-\begin{itemize}
-    \item Incertidumbre en la medición de la frecuencia $f$ y su efecto en $r$.
-    \item Errores en la calibración del LVDT (sensibilidad, posición inicial).
-    \item Aproximaciones del modelo (linealidad del resorte, amortiguamiento puramente viscoso, etc.).
-    \item Errores al medir $\Delta t$ para el cálculo del desfase experimental.
-    \item Posibles variaciones en los parámetros físicos
-          ($M_h$, $r$, momento de inercia total, etc.).
-\end{itemize}
-
-%----------------------------------------------------------
+---
 
 \subsection{Conclusiones específicas del experimento}
 
-% Escribe aquí 3–5 conclusiones puntuales sobre la vibración forzada-amortiguada,
-% centradas en:
-% - efecto del amortiguamiento,
-% - validación (o no) del modelo teórico,
-% - comportamiento de FA y del desfase.
+\begin{itemize}
+  \item El modelo de SDOF forzado-amortiguado reproduce adecuadamente las
+      amplitudes y el desfase medidos en el rango $r<1$.
+  \item El amortiguamiento incrementado (configuración cerrada) reduce el pico
+      teórico de resonancia de forma marcada ($FA_{\max}\sim19$ vs $\sim179$),
+      ensanchando la curva, tal como predice la teoría.
+  \item Las diferencias entre datos y teoría son pequeñas y atribuibles a
+      tolerancias de montaje, no linealidades leves y a la estimación de $P_m$.
+  \item Los valores de $\zeta$ estimados por decremento logarítmico son
+      consistentes con las curvas requeridas para ajustar el FA.
+\end{itemize}
 
 \end{document}

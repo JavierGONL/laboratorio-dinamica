@@ -228,7 +228,7 @@ def osciloscope_plot(path, daley=0.0, combine_channels=False):
 
 if __name__ == "__main__":
 
-    path = r"" # Ruta del csv
-    daley = 0.0  # <-- Aquí puedes cambiar el valor del delay manualmente
-    combine_channels = False  # <-- Cambiar a True para graficar ambos canales juntos
+    path = r"C:\Users\lunit\OneDrive\Desktop\laboratorio dinamica\G12\Forzada-amortiguada4.45hz" # Ruta del csv
+    daley = 300 # <-- Aquí puedes cambiar el valor del delay manualmente
+    combine_channels = False # <-- Cambiar a True para graficar ambos canales juntos
     osciloscope_plot(path, daley, combine_channels)
