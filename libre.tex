@@ -11,11 +11,45 @@
 \geometry{margin=2.5cm}
 
 \begin{document}
+
 \section{Vibración libre}
 En esta seccion se abordaran los resultados obtenidos en el primer experimento correspondiente a la vibracion libre de la viga. Esta seccion dara las bases para el desarrollo de todos los demas casos de vibraciones vistos en el laboratorio.
+\subsection{Modelo teórico }
+El sistema estudiado en este exprimento corresponde a una viga con un grado de libertad, el cual es posible modelar normalmente mediante la siguiente ecuacion:
+\[I \ddot{\theta} + k \theta = 0 \]
+Esta ecuacion diferencial de segundo orden puede cambiar dependiendo de lo que se busque hallar y de la propia geometria del sistema, pero generalmente sigue la misma estructura.
+\subsection{Descripción del montaje experimental}
+
+% Explica brevemente que es el mismo sistema de los experimentos anteriores
+% pero con amortiguador instalado en configuraciones abierta y cerrada.
+
+El montaje corresponde al sistema del banco HVT12 con:
+
+\begin{itemize}
+    \item Viga rígida apoyada en un pivote.
+    \item Resorte lineal con constante elástica $k = 3\text{kN/m}$.
+    \item Sensor LVDT para medir el desplazamiento del extremo de la viga
+          y convertirlo en ángulo de oscilación $\theta$.
+\end{itemize}
+
+%----------------------------------------------------------
+
+\subsection{Procedimiento experimental}
+
+\begin{enumerate}
+    \item Comprobar que tanto el motor como el amortiguador no esten conectados al sistema.
+    \item mover manualmente la viga a una posicion inicial delimitada por las restricciones geometricas del sistema.
+    \item Soltar para empezar la oscilacion y esperar a que el sistema alcance régimen permanente.
+    \item Registrar simultáneamente:
+          \begin{itemize}
+              \item Señal del LVDT (desplazamiento / ángulo).
+              \item Señal del sensor de proximidad (referencia de fase).
+          \end{itemize}
+    \item Exportar los datos en formato \texttt{.csv} para su análisis.
+\end{enumerate}
 
 \subsection{Calculo de Valores experimentales}
-Analizando las graficas es posible hallar los siguientes valores: partir de los datos obtenidos durante el experimento y por medio de un alaisis posterior a los archivos csv fue posible obtener: 
+Analizando los datos obtenidos durante el experimento es posible hallar: 
 \[T_{prom} = 0.196\ s\] (periodo promedio de oscilacion, tiempo transcurrido de cresta a cresta)
 \[\v_{max} = 500\ mv \]
 El segundo dato nos permite obtener el valor de la distancia maximo a paritr de la siguiente relacion 
@@ -64,7 +98,7 @@ En la Figura \ref{fig:libre_angulo_tiempo} se presenta la gráfica obtenida a pa
 \label{fig:libre_angulo_tiempo}
 \end{figure}
 
-\subsection{Conclusiones}
-A partir de los resultados obtenidos en este experimento es posible observar concordancia con los hipoteticos valores teoricos, lo cual indica que la metodologia empleada es adecuada para el analisis de este tipo de sistemas. Sin embargo, se observa que esta diferencia aun existe. Esto se puede acuñar a el desprecio de otros valores importantes que afectan el movimiento del sistema (resistencia del aire, dilatancion de la viga por el calor, etc). Estos resultados seran de utilidad para complementar siguientes secciones
+\subsection{Analisis de resultados}
+A partir de los datos procesados en esta seccion es posible observar concordancia con los hipoteticos valores teoricos, lo cual indica que la metodologia empleada es adecuada para el analisis de este tipo de sistemas.  Estos es relevante pues los valores aqui obtenidos seran de utilidad para complementar siguientes secciones
 
 \end{document}
