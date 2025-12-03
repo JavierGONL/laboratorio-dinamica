@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.11.5)  3 DEC 2025 15:58
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.11.5)  3 DEC 2025 16:24
  restricted system commands enabled.
 **"c:/Users/lunit/OneDrive/Desktop/laboratorio dinamica/Forzada amortiguada"
 ("c:/Users/lunit/OneDrive/Desktop/laboratorio dinamica/Forzada amortiguada.tex"
@@ -672,17 +672,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2]
 
 [3]
-<FA_vs_r_abierta_cerrada.png, id=90, 520.344pt x 325.215pt>
+<FA_vs_r_abierta_cerrada.png, id=90, 650.43pt x 397.485pt>
 File: FA_vs_r_abierta_cerrada.png Graphic file (type png)
 <use FA_vs_r_abierta_cerrada.png>
 Package luatex.def Info: FA_vs_r_abierta_cerrada.png  used on input line 243.
-(luatex.def)             Requested size: 364.19667pt x 227.63405pt.
-<fase_vs_r_abierta_cerrada.png, id=91, 520.344pt x 325.215pt>
+(luatex.def)             Requested size: 364.19667pt x 222.57188pt.
+<fase_vs_r_abierta_cerrada.png, id=91, 650.43pt x 397.485pt>
 File: fase_vs_r_abierta_cerrada.png Graphic file (type png)
 <use fase_vs_r_abierta_cerrada.png>
 Package luatex.def Info: fase_vs_r_abierta_cerrada.png  used on input line 253.
 
-(luatex.def)             Requested size: 364.19667pt x 227.63405pt.
+(luatex.def)             Requested size: 364.19667pt x 222.57188pt.
 
 
 [4<./FA_vs_r_abierta_cerrada.png>]
@@ -702,15 +702,15 @@ Package rerunfilecheck Info: File `"Forzada amortiguada".out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 16320 strings out of 476291
+ 16331 strings out of 476291
  100000,794899 words of node,token memory allocated
  693 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 62 attribute, 56 glue_spec
 , 33 attribute_list, 1 write nodes
-   avail lists: 2:2802,3:239,4:80,5:375,6:50,7:5734,8:50,9:985,10:21,11:611
- 38248 multiletter control sequences out of 65536+600000
+   avail lists: 2:2796,3:239,4:80,5:376,6:50,7:5726,8:50,9:985,10:13,11:814
+ 38255 multiletter control sequences out of 65536+600000
  68 fonts using 4771623 bytes
- 72i,11n,75p,417b,1030s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,11n,75p,417b,1043s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/opentype/public/lm/lmroman12
 -italic.otf><//?/c:/users/lunit/appdata/local/programs/miktex/fonts/opentype/pub
 lic/lm/lmroman10-regular.otf><c:/users/lunit/appdata/local/programs/miktex/fonts
@@ -733,9 +733,9 @@ rs/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 sy6.pfb><C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb>
-Output written on Forzada amortiguada.pdf (6 pages, 272434 bytes).
+Output written on Forzada amortiguada.pdf (6 pages, 542279 bytes).
 
-PDF statistics: 214 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 131072)
+PDF statistics: 217 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 131072)
  65 words of extra memory for PDF output out of 10000 (max. 100000000)
 

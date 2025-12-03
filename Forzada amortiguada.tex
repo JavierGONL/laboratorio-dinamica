@@ -37,20 +37,20 @@ El sistema de un grado de libertad sometido a una fuerza armónica con
 amortiguamiento se modela mediante la ecuación:
 
 \begin{equation}
-    m\,\ddot{x}(t) + c\,\dot{x}(t) + k\,x(t) = P_m \cos(\omega_f t)
+    m\,\ddot{\theta}(t) + c\,\dot{\theta}(t) + k\,\theta(t) = P_m \cos(\omega_f t)
     \label{eq:forzada_amortiguada_lineal}
 \end{equation}
-
+\vspace{1em}
 La solución en régimen permanente se escribe como:
 
 \begin{equation}
-    x(t) = X \cos(\omega_f t - \varphi)
+    	heta(t) = \Theta \cos(\omega_f t - \varphi)
 \end{equation}
 
 donde la amplitud de respuesta es:
 
 \begin{equation}
-    X = \dfrac{P_m}{\sqrt{(k - m \omega_f^2)^2 + (c \,\omega_f)^2}}
+    \Theta = \dfrac{P_m}{\sqrt{(k - m \omega_f^2)^2 + (c \,\omega_f)^2}}
     \label{eq:amplitud_forzada_amortiguada}
 \end{equation}
 
@@ -72,16 +72,16 @@ $C_{\text{crítico}} = 2\,m\,\omega_n$ el amortiguamiento crítico.
 El factor de amplificación se define como:
 
 \begin{equation}
-    FA = \dfrac{X}{X_{\text{estático}}}
+    FA = \dfrac{\Theta}{\Theta_{\text{estático}}}
        = \dfrac{1}{\sqrt{[{(1 - r^2)}]^2 + {(2 \zeta r)}^2}}
     \label{eq:FA_teorico}
 \end{equation}
 
 Además, la relación entre amplitud dinámica y estática es
 \begin{equation}
-    X 
+    \Theta 
     = \frac{P_m}{k} \; FA,
-    \qquad X_{\text{estático}} = \frac{P_m}{k}.
+    \qquad \Theta_{\text{estático}} = \frac{P_m}{k}.
 \end{equation}
 
 La fuerza de excitación debida a la masa excéntrica se calcula como:
@@ -184,7 +184,7 @@ El montaje corresponde al sistema del banco HVT12 con:
 
     \begin{equation}
         \varphi_{\text{exp}} =
-        -\left(\dfrac{\Delta t}{T}\right) 2\pi + \dfrac{\pi}{2}
+        -\left(\dfrac{\Delta t}{T}\right) 2\pi
         \label{eq:desfase_exp}
     \end{equation}
 
@@ -275,20 +275,38 @@ centrada en $r=1$ y el comportamiento cualitativo coincide con la teoría.
 
 Respecto al desfase, el modelo (Ecuación~\ref{eq:desfase_teorico}) predice que
 $\varphi$ crece desde $0^\circ$ (bajas frecuencias) hacia $180^\circ$ (altas),
-cruzando $90^\circ$ cerca de la resonancia. Los valores experimentales que
-reportamos en la Tabla~\ref{tab:forzada_amortiguada} fueron calculados con el
-criterio de la guía (Ecuación~\ref{eq:desfase_exp}, con $+\pi/2$): a
-$f=4.20$ Hz se obtuvo $\varphi_{\text{exp}}\approx126^\circ$ (abierta) y
-$\approx74^\circ$ (cerrada); a $f=4.30$ Hz, $\approx81^\circ$ (abierta) y
-$\approx50^\circ$ (cerrada); y a $f=4.45$ Hz, valores cercanos a $11^\circ$ en
-ambas configuraciones. La tendencia con la frecuencia y el efecto del
-amortiguamiento son consistentes con la teoría: mayor $\zeta$ desplaza la
-transición de fase y reduce la proximidad efectiva a la resonancia.
+cruzando $90^\circ$ cerca de la resonancia. Para el rango $r\in[0.66,0.70]$,
+la teoría predice $\varphi_{\text{teo}}\approx 0.4^\circ$. Sin embargo, los
+valores experimentales calculados con el criterio de la guía
+(Ecuación~\ref{eq:desfase_exp}) resultaron significativamente
+mayores: $126^\circ$--$11^\circ$ (abierta) y $74^\circ$--$11^\circ$ (cerrada).
+
+Existen varias posibles explicaciones para esta discrepancia:
+\begin{enumerate}
+    \item \textbf{Offset de referencia del sensor:} El sensor de proximidad detecta
+          el paso de las masas excéntricas por una posición angular específica, pero
+          esta posición podría no coincidir con el momento en que la fuerza centrífuga
+          alcanza su máximo o su cruce por cero. Esto introduce un desfase constante
+          desconocido en la referencia.
+    \item \textbf{Interpretación de la señal LVDT:} La detección del evento (cruce
+          por cero o flanco) en la señal del LVDT puede no corresponder exactamente
+          con el máximo de desplazamiento angular, especialmente si hay componentes
+          armónicas o ruido.
+    \item \textbf{Convención de signos:} La definición precisa de cuándo se considera
+          "fase cero" para cada señal (LVDT y sensor de proximidad) afecta directamente
+          el cálculo del desfase. Sin una calibración explícita de estas referencias,
+          los valores absolutos pueden diferir significativamente de la teoría.
+    \item \textbf{Dinámica del sensor:} Posibles retardos propios del sensor LVDT o
+          del sistema de adquisición que no fueron compensados.
+\end{enumerate}
 
 En síntesis, las diferencias entre $\theta_m^{\text{exp}}$ y
-$\theta_m^{\text{teo}}$ permanecen pequeñas en el rango explorado y el efecto
+$\theta_m^{\text{teo}}$ permanecen pequeñas en el rango explorado. El efecto
 del amortiguamiento se manifiesta principalmente en la altura del pico teórico
-de resonancia y en la evolución del desfase con $r$.
+de resonancia ($FA_{\max}$), donde las predicciones difieren marcadamente entre
+configuraciones abierta y cerrada. Respecto al desfase $\varphi$, las mediciones
+experimentales no lograron concordancia cuantitativa con la teoría debido a las
+limitaciones metodológicas descritas anteriormente.
 
 \subsubsection*{Estimación de $\zeta$ por decremento logarítmico}
 El coeficiente de amortiguamiento adimensional se estimó a partir de ensayos de
@@ -312,6 +330,17 @@ Con estos valores se generaron las curvas teóricas de la Fig.~\ref{fig:FA_vs_r}
       tolerancias de montaje, no linealidades leves y a la estimación de $P_m$.
   \item Los valores de $\zeta$ estimados por decremento logarítmico son
       consistentes con las curvas requeridas para ajustar el FA.
+  \item Respecto al desfase $\varphi$: los valores experimentales calculados con
+      $\varphi_{\text{exp}} = -(\Delta t/T)\,2\pi$ presentan discrepancias
+      significativas respecto a las predicciones teóricas ($\sim0.4^\circ$ vs
+      $11^\circ$--$126^\circ$ experimentales). Las posibles causas incluyen: (i) el
+      sensor de proximidad detecta la posición angular de las masas excéntricas en
+      un punto arbitrario de su rotación, no necesariamente alineado con el máximo
+      de la fuerza centrífuga; (ii) la definición de "fase cero" para cada señal
+      no fue calibrada explícitamente; (iii) posibles retardos en la cadena de medición.
+      Para mediciones precisas de $\varphi$ absoluto sería necesario calibrar el
+      offset del sensor o utilizar un encoder en el eje del motor como referencia
+      directa de la fase de excitación.
 \end{itemize}
 
 \end{document}
