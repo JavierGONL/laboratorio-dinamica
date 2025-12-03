@@ -178,7 +178,7 @@ def osciloscope_plot(path, delay=0.0, combine_channels=False):
             ax_b.plot(tiempo_s, smooth(canal_b_total, window=15), linewidth=1.2, color='tab:red', antialiased=True)
             ax_b.set_xlabel('Tiempo (s)', fontsize=12)
             ax_b.set_ylabel(' señal (mV)', fontsize=12)
-            ax_b.set_title('Vibracion Libre Amortiguada Abierta', fontsize=14, fontweight='bold')
+            ax_b.set_title('Vibracion Libre', fontsize=14, fontweight='bold')
             ax_b.grid(True, alpha=0.25, linestyle='--')
             ax_b.margins(x=0)
             fig_b.tight_layout()
@@ -228,7 +228,7 @@ def osciloscope_plot(path, delay=0.0, combine_channels=False):
 
 if __name__ == "__main__":
 
-    path = r"G12\Libre-Amortiguiado-Abierta" # Ruta del csv
-    delay = 0 # <-- Delay en ms entre segmentos (ajusta según necesites)
+    path = r"G12\Vibracio libre" # Ruta del csv
+    delay = 100 # <-- Delay en ms entre segmentos (ajusta según necesites)
     combine_channels = False # <-- Cambiar a True para graficar ambos canales juntos
     osciloscope_plot(path, delay, combine_channels)

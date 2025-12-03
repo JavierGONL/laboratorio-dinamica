@@ -4,6 +4,7 @@
 \usepackage{float}
 \usepackage{geometry}
 \geometry{margin=2.5cm}
+\usepackage[spanish]{babel}
 \usepackage[hidelinks]{hyperref}
 \usepackage{tabularx}
 \usepackage{booktabs}
@@ -65,6 +66,9 @@ y el desfase entre la fuerza y la respuesta es:
     \label{eq:desfase_teorico}
 \end{equation}
 
+con $\omega_n = \sqrt{k/m}$ la frecuencia natural sin amortiguamiento y
+$C_{\text{crítico}} = 2\,m\,\omega_n$ el amortiguamiento crítico.
+
 El factor de amplificación se define como:
 
 \begin{equation}
@@ -73,14 +77,21 @@ El factor de amplificación se define como:
     \label{eq:FA_teorico}
 \end{equation}
 
+Además, la relación entre amplitud dinámica y estática es
+\begin{equation}
+    X 
+    = \frac{P_m}{k} \; FA,
+    \qquad X_{\text{estático}} = \frac{P_m}{k}.
+\end{equation}
+
 La fuerza de excitación debida a la masa excéntrica se calcula como:
 
 \begin{equation}
-    P_m = M_h\, r\, \omega_f^2
+    P_m = M_h\, e\, \omega_f^2
     \label{eq:F_exc}
 \end{equation}
 
-donde $M_h$ es la masa equivalente del orificio, $r$ es el radio de excentricidad
+donde $M_h$ es la masa equivalente del orificio, $e$ es el radio de excentricidad
 y $\omega_f$ la velocidad angular de las masas excéntricas.
 
 %----------------------------------------------------------
@@ -94,7 +105,7 @@ El montaje corresponde al sistema del banco HVT12 con:
 
 \begin{itemize}
     \item Viga rígida apoyada en un pivote.
-    \item Resorte lineal con constante elástica $k = [\dots]\ \text{kN/m}$.
+    \item Resorte lineal con constante elástica $k = 3\text{kN/m}$.
     \item Motor con masas excéntricas HAC120.
     \item Sistema de amortiguamiento con discos en configuración:
           \textbf{abierta} y \textbf{cerrada}.
@@ -141,11 +152,7 @@ El montaje corresponde al sistema del banco HVT12 con:
         r = \dfrac{\omega_f}{\omega_n}
     \end{equation}
 
-    \item Calcular la fuerza de excitación $P_m$ usando la ecuación\eqref{eq:F_exc}:
-    \[
-        P_m = M_h\, r\, \omega_f^2
-    \]
-    con
+    \item Calcular la fuerza de excitación $P_m$ usando la ecuación\eqref{eq:F_exc}, con:
     \[
         M_h = 0.05616\ \text{kg}, \qquad r = 0.045\ \text{m}
     \]
@@ -155,7 +162,7 @@ El montaje corresponde al sistema del banco HVT12 con:
           a partir de la señal del LVDT:\@
           % Explica brevemente cómo lo haces (pico a pico, FFT, etc.)
           \begin{equation}
-              \theta^{\text{exp}}_m = \arctan\left(\dfrac{\delta_{\max}}{d}\right)
+              \theta^{\text{exp}}_m = \arctan\left(\dfrac{\delta_{\max}}{d}\right) \approx \dfrac{\delta_{\max}}{d}
           \end{equation}
           donde $\delta_{\max}$ es el desplazamiento máximo y
           $d$ la distancia del LVDT al pivote.
@@ -198,7 +205,7 @@ El montaje corresponde al sistema del banco HVT12 con:
     \scriptsize
     \caption{Resultados experimentales y teóricos para vibración forzada-amortiguada.}
     \label{tab:forzada_amortiguada}
-    \setlength{\tabcolsep}{2.5pt}
+    \setlength{\tabcolsep}{6pt}
     \begin{tabular}{l S[table-format=1.2] S[table-format=2.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=-3.4]}
         \toprule
         {Caso} & {$f$ (Hz)} & {$\omega_f$ (rad/s)} & {$P_m$ (N)} & {$\theta_{\exp}$ ($^{\circ}$)} & {$\theta_{teo}$ ($^{\circ}$)} & {$FA$} & {$r = \omega_f/\omega_n$} & {$\varphi_{teo}$ ($^{\circ}$)} & {$\varphi_{\exp}$ ($^{\circ}$)} \\
@@ -212,8 +219,9 @@ El montaje corresponde al sistema del banco HVT12 con:
         \bottomrule
     \end{tabular}
 \end{table}
-\vspace{-4pt}
+\vspace{-2pt}
 \subsubsection*{Datos adicionales}
+
 \begin{table}[htbp]
     \centering
     \setlength{\tabcolsep}{6pt}
@@ -224,11 +232,11 @@ El montaje corresponde al sistema del banco HVT12 con:
         \toprule
         $\omega_n$ (rad/s) & $\zeta$ abierta & $\zeta$ cerrada \\
         \midrule
-        39.729 & 0.0028 & 0.0260 \\
+        39.729 & 0.0028 & 0.026 \\
         \bottomrule
     \end{tabular}
 \end{table}
-
+Este $\omega_n$ es calculado en la vibración libre, y los cálculos de $\zeta$ se encuentran en el anexo X (colocarlo) para las configuraciones abierta y cerrada.
 \subsubsection*{Gráficas}
 
 \begin{figure}[htbp]
@@ -284,7 +292,7 @@ de resonancia y en la evolución del desfase con $r$.
 El coeficiente de amortiguamiento adimensional se estimó a partir de ensayos de
 vibración libre (primer segundo), detectando picos y aplicando el decremento
 logarítmico multi-$n$. El promedio (\emph{n}=1..3) arrojó:
-\[\zeta_{\text{abierta}}=0.0028,\qquad \zeta_{\text{cerrada}}=0.0260.\]
+\[\zeta_{\text{abierta}}=0.0028,\qquad \zeta_{\text{cerrada}}=0.026.\]
 Con estos valores se generaron las curvas teóricas de la Fig.~\ref{fig:FA_vs_r}.
 
 %----------------------------------------------------------
