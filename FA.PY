@@ -102,8 +102,8 @@ def main():
     ax2.plot(r, phi_cerrado, label=f'Teórica cerrada (ζ={zeta_cerrado:.5f})', color='tab:orange', linewidth=2.0, linestyle='--')
 
     # Transformación de fases experimentales al intervalo [0, 180]
-    phi_exp_ab = np.array([-132.0263, -261.3675, -197.9133])
-    phi_exp_ce = np.array([-260.7307,   -4.0398,    0.2567])
+    phi_exp_ab = np.array([125.93, 80.55, 11.57])
+    phi_exp_ce = np.array([74.19, 50.21, 10.75])
     def to_0_180(phi_deg):
         phi_mod = np.mod(phi_deg, 360.0)
         return np.where(phi_mod > 180.0, 360.0 - phi_mod, phi_mod)
