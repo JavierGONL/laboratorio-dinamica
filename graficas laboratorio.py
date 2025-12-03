@@ -17,7 +17,7 @@ def to_float_series(series):
     return pd.to_numeric(s, errors='coerce')
 
 
-def osciloscope_plot(path, daley=0.0, combine_channels=False):
+def osciloscope_plot(path, delay=0.0, combine_channels=False):
     try:
         print("Iniciando generación de gráfica...")
 
@@ -122,7 +122,7 @@ def osciloscope_plot(path, daley=0.0, combine_channels=False):
             if len(tiempo_valid) > 0:
                 t0 = tiempo_valid[0]
                 if idx > 0 and prev_dt is not None:
-                    tiempo_valid = tiempo_valid - t0 + last_t - overlap_n*prev_dt
+                    tiempo_valid = tiempo_valid - t0 + last_t - overlap_n*prev_dt - delay
                     # Eliminar todos los puntos cuyo tiempo sea <= last_t
                     mask = tiempo_valid > last_t
                     tiempo_valid = tiempo_valid[mask]
@@ -177,8 +177,8 @@ def osciloscope_plot(path, daley=0.0, combine_channels=False):
             fig_b, ax_b = plt.subplots(figsize=(14, 7))
             ax_b.plot(tiempo_s, smooth(canal_b_total, window=15), linewidth=1.2, color='tab:red', antialiased=True)
             ax_b.set_xlabel('Tiempo (s)', fontsize=12)
-            ax_b.set_ylabel('Canal B (mV)', fontsize=12)
-            ax_b.set_title('Canal B vs Tiempo - TODOS LOS CSV', fontsize=14, fontweight='bold')
+            ax_b.set_ylabel(' señal (mV)', fontsize=12)
+            ax_b.set_title('Vibracion Libre Amortiguada Abierta', fontsize=14, fontweight='bold')
             ax_b.grid(True, alpha=0.25, linestyle='--')
             ax_b.margins(x=0)
             fig_b.tight_layout()
@@ -228,7 +228,7 @@ def osciloscope_plot(path, daley=0.0, combine_channels=False):
 
 if __name__ == "__main__":
 
-    path = r"C:\Users\lunit\OneDrive\Desktop\laboratorio dinamica\G12\Forzada-amortiguada4.45hz" # Ruta del csv
-    daley = 300 # <-- Aquí puedes cambiar el valor del delay manualmente
+    path = r"G12\Libre-Amortiguiado-Abierta" # Ruta del csv
+    delay = 0 # <-- Delay en ms entre segmentos (ajusta según necesites)
     combine_channels = False # <-- Cambiar a True para graficar ambos canales juntos
-    osciloscope_plot(path, daley, combine_channels)
+    osciloscope_plot(path, delay, combine_channels)
