@@ -1,0 +1,422 @@
+\documentclass[journal]{IEEEtran}
+\renewcommand\IEEEkeywordsname{Palabras Clave}
+\renewcommand{\labelitemi}{\ding{42}}
+\renewcommand{\labelitemii}{\ding{43}}
+\newcommand{\gt}{>}
+\newcommand{\lt}{<}
+\newcommand{\aprox}{\approx}
+\newcommand{\gtapprox}{\gtrsim}
+\newcommand{\ltapprox}{\lesssim}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[svgnames]{xcolor}
+\definecolor{darklavender}{rgb}{0.45, 0.31, 0.59}
+\definecolor{brandeisblue}{rgb}{0.0, 0.44, 1.0}
+\definecolor{cinnamon}{rgb}{0.82, 0.41, 0.12}
+\definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+
+\begin{document}
+
+\title{Analisis Experimental De Vibraciones Mecanicas}
+
+
+
+\author{
+    Hernandez Daza Juan David, Mahecha Cruz Joseph Nicolás, \\
+    Maluche Suarez Ivan Felipe, Luna Gonzalez Kevin Javier \\
+    \textit{Universidad Nacional de Colombia, Facultad de Ingeniería, Bogotá D.C.} \\
+    \{kegonzalezl, jomahecha, imaluche, correo\}@unal.edu.co
+}
+
+\maketitle
+\markboth{Universidad Nacional de Colombia, Facultad de Ingeniería, DINAMICA - 2025-2}{}
+
+\begin{abstract}
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+
+\end{IEEEkeywords}
+
+\section{Introducción}
+
+\section{Objetivos del Proyecto}
+
+\subsection{Objetivo General}
+
+\subsection{Objetivos Específicos}
+\begin{enumerate}
+
+\end{enumerate}
+
+\section{Estado del arte}
+
+
+\section{Normatividad y Ensayos Técnicos(Marco Teorico)}
+
+\subsection{Vibración Libre}
+
+El sistema estudiado corresponde a una viga con un grado de libertad que se modela mediante la ecuación diferencial:
+\begin{equation}
+    I \ddot{\theta} + k \theta = 0
+\end{equation}
+
+Donde $I$ es el momento de inercia respecto al pivote, $k$ la constante elástica del resorte y $\theta$ el ángulo de oscilación. La solución de esta ecuación proporciona la frecuencia natural del sistema:
+\begin{equation}
+    \omega_n = \sqrt{\frac{k}{I}}
+\end{equation}
+
+A partir de la cual se obtienen el período y frecuencia natural:
+\begin{equation}
+    T_n = \frac{2\pi}{\omega_n}, \qquad f_n = \frac{1}{T_n}
+\end{equation}
+
+\subsection{Vibración Forzada}
+
+% Placeholder para vibración forzada
+
+\subsection{Vibración Libre Amortiguada}
+
+% Placeholder para vibración libre amortiguada
+
+\subsection{Vibración Forzada-Amortiguada}
+
+El sistema de un grado de libertad sometido a una fuerza armónica con amortiguamiento se modela mediante la ecuación:
+\begin{equation}
+    m\,\ddot{\theta}(t) + c\,\dot{\theta}(t) + k\,\theta(t) = P_m \cos(\omega_f t)
+\end{equation}
+
+La solución en régimen permanente se escribe como:
+\begin{equation}
+    \theta(t) = \Theta \cos(\omega_f t - \varphi)
+\end{equation}
+
+donde la amplitud de respuesta es:
+\begin{equation}
+    \Theta = \dfrac{P_m}{\sqrt{(k - m \omega_f^2)^2 + (c \,\omega_f)^2}}
+\end{equation}
+
+y el desfase entre la fuerza y la respuesta es:
+\begin{equation}
+    \tan \varphi = \dfrac{2\,\zeta\,r}{1 - r^2}
+    \qquad \text{con} \quad
+    r = \dfrac{\omega_f}{\omega_n}, \quad
+    \zeta = \dfrac{c}{C_{\text{crítico}}}
+\end{equation}
+
+con $\omega_n = \sqrt{k/m}$ la frecuencia natural sin amortiguamiento y $C_{\text{crítico}} = 2\,m\,\omega_n$ el amortiguamiento crítico.
+
+El factor de amplificación se define como:
+\begin{equation}
+    FA = \dfrac{\Theta}{\Theta_{\text{estático}}} = \dfrac{1}{\sqrt{[(1 - r^2)]^2 + (2 \zeta r)^2}}
+\end{equation}
+
+La fuerza de excitación debida a la masa excéntrica se calcula como:
+\begin{equation}
+    P_m = M_h\, e\, \omega_f^2
+\end{equation}
+donde $M_h$ es la masa equivalente del orificio, $e$ es el radio de excentricidad y $\omega_f$ la velocidad angular de las masas excéntricas.
+
+\section{Metodología Experimental}
+
+\subsection{Vibración Libre}
+
+El montaje corresponde al sistema del banco HVT12 con:
+\begin{itemize}
+    \item Viga rígida apoyada en un pivote.
+    \item Resorte lineal con constante elástica $k = 3$ kN/m.
+    \item Sensor LVDT para medir el desplazamiento del extremo de la viga y convertirlo en ángulo de oscilación $\theta$.
+\end{itemize}
+
+Procedimiento:
+\begin{enumerate}
+    \item Comprobar que tanto el motor como el amortiguador no estén conectados al sistema.
+    \item Mover manualmente la viga a una posición inicial delimitada por las restricciones geométricas del sistema.
+    \item Soltar para empezar la oscilación y permitir que el sistema oscile libremente.
+    \item Registrar la señal del LVDT (desplazamiento/ángulo) durante varios ciclos.
+    \item Exportar los datos en formato CSV para análisis.
+\end{enumerate}
+
+\subsection{Vibración Forzada}
+
+\subsection{Vibración Forzada Amortiguada}
+
+El montaje corresponde al sistema del banco HVT12 con:
+\begin{itemize}
+    \item Viga rígida apoyada en un pivote.
+    \item Resorte lineal con constante elástica $k = 3$ kN/m.
+    \item Motor con masas excéntricas HAC120.
+    \item Sistema de amortiguamiento con discos en configuración abierta y cerrada.
+    \item Sensor LVDT para medir el desplazamiento del extremo de la viga y convertirlo en ángulo de oscilación $\theta$.
+\end{itemize}
+
+Procedimiento:
+\begin{enumerate}
+    \item Configurar el amortiguador en la posición correspondiente (abierta o cerrada).
+    \item Encender el motor y seleccionar una frecuencia $f$ cercana a la frecuencia natural $f_n$ (diferencia máxima de 0.3 Hz).
+    \item Esperar a que el sistema alcance régimen permanente.
+    \item Registrar simultáneamente señal del LVDT (desplazamiento/ángulo) y del sensor de proximidad (referencia de fase).
+    \item Repetir para al menos tres frecuencias diferentes en cada configuración.
+    \item Exportar los datos en formato CSV para análisis posterior.
+\end{enumerate}
+
+\subsubsection{Procesamiento de Datos}
+
+\begin{enumerate}
+    \item Convertir las frecuencias forzadas $f$ a frecuencia angular:
+    \begin{equation}
+        \omega_f = 2\pi f
+    \end{equation}
+
+    \item Calcular la relación de frecuencias:
+    \begin{equation}
+        r = \dfrac{\omega_f}{\omega_n}
+    \end{equation}
+
+    \item Calcular la fuerza de excitación $P_m$ usando $P_m = M_h\, e\, \omega_f^2$, con:
+    \[
+        M_h = 0.05616\text{ kg}, \qquad e = 0.045\text{ m}
+    \]
+
+    \item Obtener el ángulo máximo experimental $\theta^{\text{exp}}_m$ a partir de la señal del LVDT:
+    \begin{equation}
+        \theta^{\text{exp}}_m = \arctan\left(\dfrac{\delta_{\max}}{d}\right) \approx \dfrac{\delta_{\max}}{d}
+    \end{equation}
+    donde $\delta_{\max}$ es el desplazamiento máximo y $d$ la distancia del LVDT al pivote.
+
+    \item Calcular la amplitud teórica $\theta^{\text{teo}}_m$ a partir de las ecuaciones del modelo y la correspondiente relación entre desplazamiento y ángulo.
+
+    \item Calcular el factor de amplificación:
+    \begin{equation}
+        FA = \dfrac{\theta_m}{\theta_{\text{estática}}}
+    \end{equation}
+
+    \item Calcular el desfase teórico usando la ecuación del modelo.
+
+    \item Calcular el desfase experimental $\varphi_{\text{exp}}$ usando la diferencia de tiempo $\Delta t$ entre la señal del LVDT y la del sensor de proximidad:
+    \begin{equation}
+        \varphi_{\text{exp}} = -\left(\dfrac{\Delta t}{T}\right) 2\pi - \dfrac{\pi}{2}
+    \end{equation}
+    donde $T$ es el período de la excitación.
+\end{enumerate}
+
+\subsubsection{Vibración Forzada Amortiguada cerrada}
+
+\subsubsection{Vibración Forzada Amortiguada abierta}
+
+\subsection{Vibración Libre Amortiguada}
+
+\subsubsection{Vibración Libre Amortiguada cerrada}
+
+\subsubsection{Vibración Libre Amortiguada abierta}
+
+
+\section{Resultados y Análisis}
+
+\subsection{Vibración Libre}
+
+\subsubsection{Resultados Experimentales}
+
+Analizando los datos obtenidos durante el experimento es posible hallar: 
+\begin{itemize}
+    \item $T_{prom} = 0.196$ s (período promedio de oscilación, tiempo transcurrido de cresta a cresta)
+    \item $v_{max} = 500$ mV
+\end{itemize}
+
+El segundo dato nos permite obtener el valor de la distancia máximo a partir de la siguiente relación:
+\[\theta_{max} = \frac{v_{max}}{350}= 1.428 \text{ mm}\]
+
+A su vez este valor puede convertirse a un ángulo usando cinemática de cuerpo rígido: 
+\[\theta_{max} = \frac{1.428}{119} = 0.01200\text{ rad}\]
+
+\subsubsection{Valores Teóricos y Procesamiento de Datos}
+
+Teniendo en cuenta la geometría del sistema es posible desarrollar un diagrama de cuerpo libre que permita encontrar los valores de interés:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{G12/Vibracio libre/Diagrama_cuerpo_libre.png}
+    \caption{Diagrama de cuerpo libre para vibración libre.}
+    \label{fig:dcl_libre}
+\end{figure}
+
+Al resolver la ecuación diferencial del sistema se obtiene: 
+\[\omega_{n}  = 39.67\text{ rad/s}\]
+
+De igual manera haciendo un análisis geométrico con ayuda de los datos dados sobre el sistema es posible hallar la siguiente relación:
+\[\theta_{m} = \frac{15}{845} = 0.01775\text{ rad}\]
+
+A partir de los valores obtenidos tanto teórica como experimentalmente es posible encontrar por medio de las siguientes operaciones otros valores igual de relevantes para nuestro análisis:
+\[f_{n} = \frac{1}{T_{n}}\] 
+\[\omega_{n} = 2 \pi f_{n}\]
+
+\begin{table}[H]
+    \centering
+    \caption{Resultados experimentales y teóricos para vibración libre.}
+    \label{tab:libre_informe}
+    \begin{tabular}{lccccc}
+        \toprule
+        Caso & $\omega_n$ [rad/s] & $T_n$ [s] & $f_n$ [Hz] & $\theta$ [rad] & $\theta$ [$^\circ$] \\
+        \midrule
+        EXP & 32.057 & 0.196 & 5.102 & 0.01200 & 0.6877914 \\
+        TEÓRICO & 39.670 & 0.158 & 6.314 & 0.01775 & 1.016978 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsubsection{Análisis}
+
+Los resultados experimentales muestran concordancia razonable con los valores teóricos. La frecuencia natural experimental $f_n = 5.102$ Hz se aproxima al valor teórico de $6.314$ Hz, con una diferencia del orden del 19\%. Esta discrepancia puede atribuirse a:
+\begin{itemize}
+    \item Tolerancias en las propiedades geométricas e inerciales del sistema.
+    \item Fricción en el pivote no considerada en el modelo ideal.
+    \item Incertidumbre en la constante elástica del resorte.
+\end{itemize}
+
+El período promedio medido $T_{prom} = 0.196$ s proporciona una base sólida para los análisis de vibración forzada subsecuentes, estableciendo la frecuencia de referencia del sistema.
+
+\subsubsection{Gráfica ángulo vs tiempo}
+
+En la Figura~\ref{fig:libre_angulo_tiempo_informe} se presenta la gráfica obtenida a partir de los datos del archivo CSV, que describe cómo varía la señal eléctrica del sensor en función del tiempo:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{G12/Vibracio libre/todos_B.png}
+    \caption{Ángulo vs tiempo para vibración libre.}
+    \label{fig:libre_angulo_tiempo_informe}
+\end{figure}
+
+\subsection{Vibración Forzada Amortiguada}
+
+\subsubsection{Resultados Experimentales}
+
+En las Tablas~\ref{tab:forzada_parametros} y~\ref{tab:forzada_resultados} se presentan los parámetros de entrada y resultados calculados para vibración forzada-amortiguada.
+
+\begin{table}[H]
+    \centering
+    \caption{Parámetros de entrada y amplitudes medidas}
+    \label{tab:forzada_parametros}
+    \scriptsize
+    \begin{tabular}{lccccc}
+        \toprule
+        Caso & $f$ (Hz) & $\omega_f$ (rad/s) & $P_m$ (N) & $\theta_{\exp}$ ($^\circ$) & $\theta_{teo}$ ($^\circ$) \\
+        \midrule
+        Abierta & 4.20 & 26.3894 & 1.7599 & 0.3257 & 7.2222 \\
+        Abierta & 4.30 & 27.0177 & 1.8447 & 0.6861 & 7.2222 \\
+        Abierta & 4.45 & 27.9602 & 1.9757 & 0.5992 & 7.2222 \\
+        Cerrada & 4.20 & 26.3894 & 1.7599 & 0.3797 & 7.2222 \\
+        Cerrada & 4.30 & 27.0177 & 1.8447 & 0.3697 & 7.2222 \\
+        Cerrada & 4.45 & 27.9602 & 1.9757 & 0.2707 & 7.2222 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Resultados calculados: FA, r y desfases}
+    \label{tab:forzada_resultados}
+    \scriptsize
+    \begin{tabular}{lcccc}
+        \toprule
+        Caso & $FA$ & $r$ & $\varphi_{teo}$ ($^\circ$) & $\varphi_{\exp}$ ($^\circ$) \\
+        \midrule
+        Abierta & 1.7895 & 0.6642 & 0.3746 & 125.93 \\
+        Abierta & 1.8603 & 0.6800 & 0.3987 &  80.55 \\
+        Abierta & 1.9813 & 0.7038 & 0.4394 &  11.57 \\
+        Cerrada & 1.7895 & 0.6642 & 0.3559 &  74.19 \\
+        Cerrada & 1.8603 & 0.6800 & 0.3878 &  50.21 \\
+        Cerrada & 1.9813 & 0.7038 & 0.4175 &  10.75 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Parámetros adicionales del sistema}
+    \label{tab:datos_adicionales_informe}
+    \begin{tabular}{ccc}
+        \toprule
+        $\omega_n$ (rad/s) & $\zeta$ abierta & $\zeta$ cerrada \\
+        \midrule
+        39.729 & 0.0028 & 0.026 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Este $\omega_n$ es calculado en la vibración libre, y los cálculos de $\zeta$ se obtuvieron por decremento logarítmico para las configuraciones abierta y cerrada.
+
+\subsubsection{Análisis del Factor de Amplificación}
+
+Los factores de amplificación medidos son $FA \in [1.79, 1.98]$ para ambas configuraciones. Esto es consistente con el modelo, ya que trabajamos lejos de la resonancia ($r < 1$), donde el efecto del amortiguamiento es poco visible en la amplitud. 
+
+En cambio, cerca de $r = 1$ el modelo predice picos muy distintos: con $\zeta = 0.0028$ (abierto) el pico teórico es $FA_{max} \approx 1/(2\zeta) \approx 179$, mientras que con $\zeta = 0.026$ (cerrado) es $FA_{max} \approx 19$. Esta diferencia se observa en la Fig.~\ref{fig:FA_vs_r_informe}, donde la línea de resonancia queda centrada en $r = 1$ y el comportamiento cualitativo coincide con la teoría.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{FA_vs_r_abierta_cerrada.png}
+    \caption{Factor de amplificación $FA$ vs $r = \omega_f/\omega_n$}
+    \label{fig:FA_vs_r_informe}
+\end{figure}
+
+\subsubsection{Análisis del Desfase}
+
+En la Figura~\ref{fig:fase_vs_r_informe} se presenta la gráfica del desfase en función de la relación de frecuencias:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{fase_vs_r_abierta_cerrada.png}
+    \caption{Desfase $\varphi$ (en grados) en función de $\omega_f/\omega_n$. Se incluyen las curvas teóricas para las dos configuraciones y los puntos experimentales.}
+    \label{fig:fase_vs_r_informe}
+\end{figure}
+
+El modelo teórico predice que $\varphi$ crece desde $0^\circ$ (bajas frecuencias) hacia $180^\circ$ (altas), cruzando $90^\circ$ cerca de la resonancia. Para el rango $r \in [0.66, 0.70]$, la teoría predice $\varphi_{teo} \approx 0.4^\circ$. Sin embargo, los valores experimentales resultaron significativamente mayores: $126^\circ$--$11^\circ$ (abierta) y $74^\circ$--$11^\circ$ (cerrada).
+
+Posibles explicaciones para esta discrepancia:
+\begin{enumerate}
+    \item \textbf{Offset de referencia del sensor:} El sensor de proximidad detecta el paso de las masas excéntricas por una posición angular específica que podría no coincidir con el momento en que la fuerza centrífuga alcanza su máximo o cruce por cero.
+    \item \textbf{Convención de signos:} La definición de "fase cero" para cada señal afecta directamente el cálculo. Sin calibración explícita, los valores absolutos pueden diferir significativamente de la teoría.
+    \item \textbf{Dinámica del sensor:} Posibles retardos propios del sensor LVDT o del sistema de adquisición no compensados.
+\end{enumerate}
+
+Las mediciones experimentales del desfase no lograron concordancia cuantitativa con la teoría debido a estas limitaciones metodológicas.
+
+\section{Discusiones}
+
+
+\section{Conclusiones}
+
+\subsection{Vibración Libre}
+
+\begin{enumerate}
+    \item Se determinó experimentalmente la frecuencia natural del sistema: $f_n = 5.102$ Hz ($\omega_n = 32.057$ rad/s), con un período promedio de $T_{prom} = 0.196$ s.
+    \item Los valores experimentales muestran concordancia cualitativa con las predicciones teóricas ($f_n^{teo} = 6.314$ Hz), con diferencias atribuibles a tolerancias geométricas, fricción en el pivote e incertidumbre en parámetros del sistema.
+    \item El ángulo máximo de oscilación experimental $\theta_{max} = 0.012$ rad ($0.688^\circ$) proporciona información sobre las condiciones iniciales del sistema.
+    \item Los valores obtenidos en este experimento establecen la base de referencia para caracterizar el comportamiento del sistema en condiciones de vibración forzada y amortiguada.
+\end{enumerate}
+
+\subsection{Vibración Forzada Amortiguada}
+
+\begin{enumerate}
+    \item El modelo de SDOF forzado-amortiguado reproduce adecuadamente las amplitudes medidas en el rango $r < 1$.
+    \item El amortiguamiento incrementado (configuración cerrada) reduce el pico teórico de resonancia de forma marcada ($FA_{max} \sim 19$ vs $\sim 179$), ensanchando la curva, tal como predice la teoría.
+    \item Las diferencias entre $\theta_{exp}$ y $\theta_{teo}$ permanecen pequeñas en el rango explorado. El efecto del amortiguamiento se manifiesta principalmente en la altura del pico teórico de resonancia.
+    \item Los valores de $\zeta$ estimados por decremento logarítmico ($\zeta_{abierta} = 0.0028$, $\zeta_{cerrada} = 0.026$) son consistentes con las curvas teóricas requeridas para ajustar el factor de amplificación.
+    \item Respecto al desfase $\varphi$: los valores experimentales presentan discrepancias significativas respecto a las predicciones teóricas ($\sim 0.4^\circ$ vs $11^\circ$--$126^\circ$ experimentales). Las posibles causas incluyen: (i) offset de referencia del sensor de proximidad que detecta una posición angular arbitraria no alineada con la fuerza centrífuga; (ii) la definición de ``fase cero'' no fue calibrada explícitamente; (iii) posibles retardos en la cadena de medición. Para mediciones precisas de $\varphi$ absoluto sería necesario calibrar el offset del sensor o utilizar un encoder en el eje del motor como referencia directa de la fase de excitación.
+\end{enumerate}
+
+\bibliography{bibliografia}
+\bibliographystyle{IEEEtran}
+
+\section{Anexos}
+
+\end{document}
