@@ -11,21 +11,32 @@
 
 \begin{document}
 \section{Vibración libre}
-En esta seccion se abordaran los resultados obtenidos en el primer experimento, correspondiente a la vibracion libre de la viga. Esta seccion dara las bases para el desarrollo de todos lso demas casos de vibraciones
+En esta seccion se abordaran los resultados obtenidos en el primer experimento correspondiente a la vibracion libre de la viga. Esta seccion dara las bases para el desarrollo de todos los demas casos de vibraciones vistos en el laboratorio.
 
 \subsection{Calculo de Valores experimentales}
-A partir de los datos obtenidos durante el experimento adjuntos en los archivos CSV se obtuvieron los siguientes valores: 
-\[T_{prom} = 0.196\ s\]
-\[\theta_{m} = 0.012\ rad\]
-Estos valores para el periodo y amplitud maxima angular son contrastados con sus equivalentes teoricos, los cuales a base de los datos fisicos del sistema (masa, constante de resorte, etc)   por medio de los procesos adjuntos se pueden obtener:
+Analizando las graficas es posible hallar los siguientes valores: partir de los datos obtenidos durante el experimento y por medio de un alaisis posterior a los archivos csv fue posible obtener: 
+\[T_{prom} = 0.196\ s\] (periodo promedio de oscilacion, tiempo transcurrido de cresta a cresta)
+\[\v_{max} = 500\ mv \]
+El segundo dato nos permite obtener el valor de la distancia maximo a paritr de la siguiente relacion 
+\[\theta_{max} = \frac{v_{max}}{350}= 1.428 mm\]
+A su vez este valro puede convertirse a un angulo usando cinematica de cuerpo rigido: 
+\[\theta_{max} = \frac{1.428}{119} = 0.01200\ rad\]
+\subsection{Valores teoricos y Procesamiento de datos}
+Teniendo en cuenta la geometria del sistema es posible desarrollar un diagrama de cuerpo libre que permita encontrar los valores de interes:
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{C:/Users/ivanm/OneDrive/Documentos/Dinamica/lab_dinamica/laboratorio-dinamica/G12/Vibracio libre/Diagrama_cuerpo_libre.png}
+\caption{Diagrama de cuerpo libre para vibración libre.}
+\end{figure}
+Al resolver la ecuacion diferencial del sistema se obtiene: 
 \[\omega_{n}  = 39.67\ rad/s\]
+De igual manera haciendo un analisis geometrico con ayuda de los datos dados sobre el sistema es psoible hallar la siguiente relacion:
+\[\theta_{m} = \frac{15}{845}\]
 \[\theta_{m} = 0.01775\ rad\]
 \subsection{Procesamiento de datos}
-A partir de estos 2 valores es posible encontrar por medio de las siguientes operaciones otros valores igual de relevantes para nuestro analisis:
-\noindent \textbf{Frecuencia natural}:
-\[f_{n} = \frac{1}{T_{prom}} = 5.10\ Hz\] 
-\[w_{n} = 2 \pi f_{n} = 32.04\ rad/s\]
-\subsection{Cuadro de resultados}
+A partir de los valores obtenidos tanto teorica como experimentalmente es posible encontrar por medio de las siguientes operaciones otros valores igual de relevantes para nuestro analisis:
+\[f_{n} = \frac{1}{T_{n}} \] 
+\[w_{n} = 2 \pi f_{n} \]
 
 \begin{table}[h!]
 \centering
@@ -44,7 +55,7 @@ TEÓRICO & 39.670 & 0.158 & 6.314 & 0.01775 & 1.016978 \\
 
 \subsection{Gráfica ángulo vs tiempo}
 
-En la Figura \ref{fig:libre_angulo_tiempo} se presenta la gráfica del ángulo en función del tiempo para la vibración libre de la viga, obtenida a partir de los datos experimentales del sensor de proximidad (Canal B).
+En la Figura \ref{fig:libre_angulo_tiempo} se presenta la gráfica obtenida a partir de los datos dados por el archivo csv, esta describe el como varia la señal electrica del sensor en funcion del tiempo:
 
 \begin{figure}[h!]
 \centering
@@ -54,6 +65,6 @@ En la Figura \ref{fig:libre_angulo_tiempo} se presenta la gráfica del ángulo e
 \end{figure}
 
 \subsection{Conclusiones}
-A partir de los resultados obtenidos en este experimento es posible observar que los valores teoricos no estan muy alejados de los medidos mediante el experimento, lo cual indica que la metodologia empleada es adecuada para el analisis de este tipo de sistemas. Sin embargo, se observa una diferencia notable en los valores de frecuencia natural y periodo, lo cual puede atribuirse a factores como errores en la medicion, condiciones ambientales o propiedades del material que no fueron consideradas en el modelo teorico. Estos resultados seran de utilidad para complementar siguientes secciones
+A partir de los resultados obtenidos en este experimento es posible observar concordancia con los hipoteticos valores teoricos, lo cual indica que la metodologia empleada es adecuada para el analisis de este tipo de sistemas. Sin embargo, se observa que esta diferencia aun existe. Esto se puede acuñar a el desprecio de otros valores importantes que afectan el movimiento del sistema (resistencia del aire, dilatancion de la viga por el calor, etc). Estos resultados seran de utilidad para complementar siguientes secciones
 
 \end{document}
