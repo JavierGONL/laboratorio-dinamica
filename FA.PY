@@ -11,7 +11,7 @@ def main():
 
     # Parámetros (ζ = C/C_c asumidos adimensionales)
     # Zetas recalculadas por decremento log multi-n (promedio n=1..3)
-    zeta_abierto = 0.00275
+    zeta_abierto = 0.0028
     zeta_cerrado = 0.026
 
     # Malla amplia para mostrar forma general (pico resonancia) hasta r=2
@@ -43,18 +43,26 @@ def main():
     ax.text(1.0 + 0.01, max(FA_abierto.max(), FA_cerrado.max()) * 0.85, 'resonancia',
             rotation=90, va='top', ha='left', color='gray', fontsize=9)
 
-    # Escala principal: permitir ver el pico (que con ζ muy pequeño se hace enorme cerca de r=1)
-    # Limitamos FA máximo para lectura (clipping visual) usando percentil para evitar distorsión extrema
-    fa_limite = np.percentile(np.concatenate([FA_abierto, FA_cerrado]), 99.5)
-    ax.set_ylim(0, fa_limite)
+    # Escala principal: mostrar el pico real (FA_max ~ 1/(2ζ)).
+    # Fijamos un límite alto para que se aprecie la resonancia y usamos el inset para la zona experimental.
+    # Abierta: ζ muy pequeño → FA_max ≈ 1/(2ζ) ~ 179; Cerrada: ≈ 19.
+    ax.set_ylim(0, 200)
     # Limites simétricos alrededor de r=1 para centrar la línea de resonancia
-    ax.set_xlim(0.6, 1.4)
+    ax.set_xlim(0.6, 1.2)
 
     ax.set_xlabel(r'$\omega_f / \omega_n$')
     ax.set_ylabel(r'$FA$')
     ax.set_title(r'Factor de Amplificación')
     ax.grid(True, linestyle='--', alpha=0.25)
     ax.legend(loc='upper right')
+
+    # Anotaciones cerca de la resonancia para FA_max teórico
+    fa_max_ab = 1.0 / (2.0 * zeta_abierto)
+    fa_max_ce = 1.0 / (2.0 * zeta_cerrado)
+    ax.text(1.02, min(fa_max_ab, 200) * 0.95, f'FA_max abierta ≈ {fa_max_ab:.0f}',
+            color='tab:blue', fontsize=9)
+    ax.text(1.02, fa_max_ce * 0.95, f'FA_max cerrada ≈ {fa_max_ce:.0f}',
+            color='tab:orange', fontsize=9)
 
     # Inset (zoom) para la zona experimental
     ax_zoom = inset_axes(ax, width="42%", height="52%", loc='lower left',
