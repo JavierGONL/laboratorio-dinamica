@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.11.5)  1 DEC 2025 17:47
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.11.5)  2 DEC 2025 19:55
  restricted system commands enabled.
 **"Forzada amortiguada.tex"
 ("./Forzada amortiguada.tex"
@@ -191,7 +191,147 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layoutvoffset=\dimen166
 \Gm@dimlist=\toks25
 
-(C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg)) (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
+(C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg)) (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty
+Package: babel 2025/10/01 v25.13 The multilingual framework for LuaLaTeX, pdfLa
+TeX and XeLaTeX
+
+(C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.def
+\bbl@readstream=\read2
+\l@afrikaans=\language2
+Package babel Info: Non-standard hyphenation setup on input line 118.
+\l@ancientgreek=\language3
+\l@armenian=\language4
+\l@assamese=\language5
+\l@basque=\language6
+\l@belarusian=\language7
+\l@bengali=\language8
+\l@bokmal=\language9
+\l@bulgarian=\language10
+\l@catalan=\language11
+\l@churchslavonic=\language12
+\l@classiclatin=\language13
+\l@coptic=\language14
+\l@croatian=\language15
+\l@czech=\language16
+\l@danish=\language17
+\l@dutch=\language18
+\l@esperanto=\language19
+\l@estonian=\language20
+\l@ethiopic=\language21
+\l@finnish=\language22
+\l@french=\language23
+\l@friulan=\language24
+\l@galician=\language25
+\l@georgian=\language26
+\l@german=\language27
+\l@greek=\language28
+\l@gujarati=\language29
+\l@hindi=\language30
+\l@hungarian=\language31
+\l@icelandic=\language32
+\l@indonesian=\language33
+\l@interlingua=\language34
+\l@irish=\language35
+\l@italian=\language36
+\l@kannada=\language37
+\l@kurmanji=\language38
+\l@latin=\language39
+\l@latvian=\language40
+\l@lithuanian=\language41
+\l@liturgicallatin=\language42
+\l@macedonian=\language43
+\l@malayalam=\language44
+\l@marathi=\language45
+\l@mongolian=\language46
+\l@mongolianlmc=\language47
+\l@monogreek=\language48
+\l@ngerman=\language49
+\l@nynorsk=\language50
+\l@occitan=\language51
+\l@oriya=\language52
+\l@pali=\language53
+\l@panjabi=\language54
+\l@piedmontese=\language55
+\l@polish=\language56
+\l@portuguese=\language57
+\l@romanian=\language58
+\l@romansh=\language59
+\l@russian=\language60
+\l@sanskrit=\language61
+\l@serbian=\language62
+\l@serbianc=\language63
+\l@slovak=\language64
+\l@slovenian=\language65
+\l@spanish=\language66
+\l@swedish=\language67
+\l@swissgerman=\language68
+\l@tamil=\language69
+\l@telugu=\language70
+\l@thai=\language71
+\l@turkish=\language72
+\l@turkmen=\language73
+\l@ukenglish=\language74
+\l@ukrainian=\language75
+\l@uppersorbian=\language76
+\l@usenglishmax=\language77
+\l@welsh=\language78
+\babelcatcodetablenum=\catcodetable14
+\bbl@pattcodes=\catcodetable15
+)
+\babel@savecnt=\count297
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2045.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2047.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2049.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2050.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2051.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2053.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2078.
+\U@D=\dimen167
+\l@unhyphenated=\language79
+
+(C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.def
+\bbl@attr@locale=\attribute4
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/arabi/bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/babel-spanish/spanish.l
+df
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+
+(C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/es/babel
+-spanish.tex
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 12.
+)
+\es@quottoks=\toks26
+\es@quotdepth=\count298
+Package babel Info: Making " an active character on input line 570.
+Package babel Info: Making . an active character on input line 675.
+Package babel Info: Making < an active character on input line 722.
+Package babel Info: Making > an active character on input line 722.
+
+(C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyph/lo
+adhyph-es.tex UTF-8 Spanish hyphenation patterns
+(C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/te
+x/hyph-es.tex))))
+LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) 
+on input line 8.
+LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1)
+ on input line 8.
+
+(C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty
@@ -220,7 +360,7 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks26
+\pdftexcmds@toks=\toks27
 ))
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
@@ -238,26 +378,26 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count297
+\c@section@level=\count299
 )
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count298
+\etb@tempcnta=\count300
 )
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/generic/stringenc/stringenc.s
 ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen167
-\Hy@linkcounter=\count299
-\Hy@pagecounter=\count300
+\@linkdim=\dimen168
+\Hy@linkcounter=\count301
+\Hy@pagecounter=\count302
  (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 ) (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count301
+\Hy@SavedSpaceFactor=\count303
  (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 )
@@ -268,14 +408,14 @@ Package hyperref Info: Plain pages OFF on input line 4210.
 Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count302
+\c@Hy@tempcnt=\count304
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4801.
-\XeTeXLinkMargin=\dimen168
+\XeTeXLinkMargin=\dimen169
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -285,9 +425,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count303
-\Field@Width=\dimen169
-\Fld@charsize=\dimen170
+\Fld@menulength=\count305
+\Field@Width=\dimen170
+\Fld@charsize=\dimen171
 Package hyperref Info: Hyper figures OFF on input line 6078.
 Package hyperref Info: Link nesting OFF on input line 6083.
 Package hyperref Info: Hyper index ON on input line 6086.
@@ -295,16 +435,16 @@ Package hyperref Info: backreferencing OFF on input line 6093.
 Package hyperref Info: Link coloring OFF on input line 6098.
 Package hyperref Info: Link coloring with OCG OFF on input line 6103.
 Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count304
-\c@Item=\count305
-\c@Hfootnote=\count306
+\Hy@abspage=\count306
+\c@Item=\count307
+\c@Hfootnote=\count308
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.def
 File: hluatex.def 2025-07-12 v7.01o Hyperref driver for luaTeX
-\Fld@listcount=\count307
-\c@bookmark@seq@number=\count308
+\Fld@listcount=\count309
+\c@bookmark@seq@number=\count310
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfil
 echeck.sty
@@ -324,58 +464,58 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty
 Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
-\col@sep=\dimen171
+\col@sep=\dimen172
 \ar@mcellbox=\box57
-\extrarowheight=\dimen172
-\NC@list=\toks27
+\extrarowheight=\dimen173
+\NC@list=\toks28
 \extratabsurround=\skip55
 \backup@length=\skip56
 \ar@cellbox=\box58
 )
-\TX@col@width=\dimen173
-\TX@old@table=\dimen174
-\TX@old@col=\dimen175
-\TX@target=\dimen176
-\TX@delta=\dimen177
-\TX@cols=\count309
-\TX@ftn=\toks28
+\TX@col@width=\dimen174
+\TX@old@table=\dimen175
+\TX@old@col=\dimen176
+\TX@target=\dimen177
+\TX@delta=\dimen178
+\TX@cols=\count311
+\TX@ftn=\toks29
 )
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen178
-\lightrulewidth=\dimen179
-\cmidrulewidth=\dimen180
-\belowrulesep=\dimen181
-\belowbottomsep=\dimen182
-\aboverulesep=\dimen183
-\abovetopsep=\dimen184
-\cmidrulesep=\dimen185
-\cmidrulekern=\dimen186
-\defaultaddspace=\dimen187
-\@cmidla=\count310
-\@cmidlb=\count311
-\@aboverulesep=\dimen188
-\@belowrulesep=\dimen189
-\@thisruleclass=\count312
-\@lastruleclass=\count313
-\@thisrulewidth=\dimen190
+\heavyrulewidth=\dimen179
+\lightrulewidth=\dimen180
+\cmidrulewidth=\dimen181
+\belowrulesep=\dimen182
+\belowbottomsep=\dimen183
+\aboverulesep=\dimen184
+\abovetopsep=\dimen185
+\cmidrulesep=\dimen186
+\cmidrulekern=\dimen187
+\defaultaddspace=\dimen188
+\@cmidla=\count312
+\@cmidlb=\count313
+\@aboverulesep=\dimen189
+\@belowrulesep=\dimen190
+\@thisruleclass=\count314
+\@lastruleclass=\count315
+\@thisrulewidth=\dimen191
 )
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
-\l__siunitx_number_uncert_offset_int=\count314
-\l__siunitx_number_exponent_fixed_int=\count315
-\l__siunitx_number_min_decimal_int=\count316
-\l__siunitx_number_min_integer_int=\count317
-\l__siunitx_number_round_precision_int=\count318
-\l__siunitx_number_lower_threshold_int=\count319
-\l__siunitx_number_upper_threshold_int=\count320
-\l__siunitx_number_group_first_int=\count321
-\l__siunitx_number_group_size_int=\count322
-\l__siunitx_number_group_minimum_int=\count323
-\l__siunitx_angle_tmp_dim=\dimen191
+\l__siunitx_number_uncert_offset_int=\count316
+\l__siunitx_number_exponent_fixed_int=\count317
+\l__siunitx_number_min_decimal_int=\count318
+\l__siunitx_number_min_integer_int=\count319
+\l__siunitx_number_round_precision_int=\count320
+\l__siunitx_number_lower_threshold_int=\count321
+\l__siunitx_number_upper_threshold_int=\count322
+\l__siunitx_number_group_first_int=\count323
+\l__siunitx_number_group_size_int=\count324
+\l__siunitx_number_group_minimum_int=\count325
+\l__siunitx_angle_tmp_dim=\dimen192
 \l__siunitx_angle_marker_box=\box59
 \l__siunitx_angle_unit_box=\box60
-\l__siunitx_compound_count_int=\count324
+\l__siunitx_compound_count_int=\count326
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/translations/translatio
 ns.sty
@@ -383,22 +523,19 @@ Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
  (CN)
 )
 \l__siunitx_table_tmp_box=\box61
-\l__siunitx_table_tmp_dim=\dimen192
-\l__siunitx_table_column_width_dim=\dimen193
+\l__siunitx_table_tmp_dim=\dimen193
+\l__siunitx_table_column_width_dim=\dimen194
 \l__siunitx_table_integer_box=\box62
 \l__siunitx_table_decimal_box=\box63
 \l__siunitx_table_uncert_box=\box64
 \l__siunitx_table_before_box=\box65
 \l__siunitx_table_after_box=\box66
-\l__siunitx_table_before_dim=\dimen194
-\l__siunitx_table_carry_dim=\dimen195
-\l__siunitx_unit_tmp_int=\count325
-\l__siunitx_unit_position_int=\count326
-\l__siunitx_unit_total_int=\count327
+\l__siunitx_table_before_dim=\dimen195
+\l__siunitx_table_carry_dim=\dimen196
+\l__siunitx_unit_tmp_int=\count327
+\l__siunitx_unit_position_int=\count328
+\l__siunitx_unit_total_int=\count329
 )
-Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 18.
-
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/graphics/color.sty
 Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
 
@@ -411,45 +548,50 @@ Package color Info: Driver file: luatex.def on input line 149.
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-lua
 tex.def
 File: l3backend-luatex.def 2025-06-09 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count328
-Inserting `l3color' in `luaotfload.parse_color'.) ("./Forzada amortiguada.aux")
+\l__color_backend_stack_int=\count330
+Inserting `l3color' in `luaotfload.parse_color'.) ("./Forzada amortiguada.aux"
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported on input line 11.
+)
 \openout1 = Forzada amortiguada.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
-\scratchdimen=\dimen196
+\scratchcounter=\count331
+\scratchdimen=\dimen197
 \scratchbox=\box67
-\nofMPsegments=\count330
-\nofMParguments=\count331
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count332
-\MPscratchDim=\dimen197
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
-\everyMPtoPDFconversion=\toks30
+\nofMPsegments=\count332
+\nofMParguments=\count333
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count334
+\MPscratchDim=\dimen198
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
+\everyMPtoPDFconversion=\toks31
 )
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-b
 ase.sty
@@ -495,26 +637,28 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 18.
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+Package hyperref Info: Link coloring OFF on input line 19.
 ("./Forzada amortiguada.out") ("./Forzada amortiguada.out")
 \@outlinefile=\write3
 
 \openout3 = Forzada amortiguada.out
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/translations/dicts/tran
-slations-basic-dictionary-english.trsl
-File: translations-basic-dictionary-english.trsl (english translation file `tra
+slations-basic-dictionary-spanish.trsl
+File: translations-basic-dictionary-spanish.trsl (spanish translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 18.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+or `spanish'. on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
 
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
 
 
 (C:/Users/lunit/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
@@ -528,24 +672,27 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2]
 
 [3]
-<FA_vs_r_abierta_cerrada.png, id=86, 650.43pt x 397.485pt>
+<FA_vs_r_abierta_cerrada.png, id=90, 650.43pt x 397.485pt>
 File: FA_vs_r_abierta_cerrada.png Graphic file (type png)
 <use FA_vs_r_abierta_cerrada.png>
-Package luatex.def Info: FA_vs_r_abierta_cerrada.png  used on input line 236.
+Package luatex.def Info: FA_vs_r_abierta_cerrada.png  used on input line 244.
 (luatex.def)             Requested size: 364.19667pt x 222.57188pt.
-<fase_vs_r_abierta_cerrada.png, id=87, 650.43pt x 397.485pt>
+<fase_vs_r_abierta_cerrada.png, id=91, 650.43pt x 397.485pt>
 File: fase_vs_r_abierta_cerrada.png Graphic file (type png)
 <use fase_vs_r_abierta_cerrada.png>
-Package luatex.def Info: fase_vs_r_abierta_cerrada.png  used on input line 246.
+Package luatex.def Info: fase_vs_r_abierta_cerrada.png  used on input line 254.
 
 (luatex.def)             Requested size: 364.19667pt x 222.57188pt.
 
 
-[4]
+[4<./FA_vs_r_abierta_cerrada.png>]
 
-[5<./FA_vs_r_abierta_cerrada.png><./fase_vs_r_abierta_cerrada.png>]
+[5<./fase_vs_r_abierta_cerrada.png>]
 
-[6] ("./Forzada amortiguada.aux")
+[6] ("./Forzada amortiguada.aux"
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
+)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -555,15 +702,15 @@ Package rerunfilecheck Info: File `"Forzada amortiguada".out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 14647 strings out of 476291
- 100000,662416 words of node,token memory allocated
- 608 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 32 attribute, 56 glue_spec
-, 32 attribute_list, 1 write nodes
-   avail lists: 2:1654,3:208,4:72,5:498,6:48,7:7763,8:50,9:1000,10:13,11:341
- 36620 multiletter control sequences out of 65536+600000
+ 16320 strings out of 476291
+ 100000,794899 words of node,token memory allocated
+ 693 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 62 attribute, 56 glue_spec
+, 33 attribute_list, 1 write nodes
+   avail lists: 2:2802,3:239,4:80,5:375,6:50,7:5740,8:50,9:985,10:14,11:621
+ 38248 multiletter control sequences out of 65536+600000
  68 fonts using 4771623 bytes
- 72i,11n,75p,368b,1024s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,11n,75p,368b,1030s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/opentype/public/lm/lmroman12
 -italic.otf><//?/c:/users/lunit/appdata/local/programs/miktex/fonts/opentype/pub
 lic/lm/lmroman10-regular.otf><c:/users/lunit/appdata/local/programs/miktex/fonts
@@ -586,9 +733,9 @@ rs/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 sy6.pfb><C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb>
-Output written on Forzada amortiguada.pdf (6 pages, 534111 bytes).
+Output written on Forzada amortiguada.pdf (6 pages, 535491 bytes).
 
 PDF statistics: 211 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 131072)
+ 50 named destinations out of 1000 (max. 131072)
  65 words of extra memory for PDF output out of 10000 (max. 100000000)
 
