@@ -1,7 +1,7 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.11.5)  2 DEC 2025 19:55
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.11.5)  3 DEC 2025 14:52
  restricted system commands enabled.
-**"Forzada amortiguada.tex"
-("./Forzada amortiguada.tex"
+**"c:/Users/lunit/OneDrive/Desktop/laboratorio dinamica/Forzada amortiguada"
+("c:/Users/lunit/OneDrive/Desktop/laboratorio dinamica/Forzada amortiguada.tex"
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
@@ -707,10 +707,10 @@ Here is how much of LuaTeX's memory you used:
  693 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 62 attribute, 56 glue_spec
 , 33 attribute_list, 1 write nodes
-   avail lists: 2:2802,3:239,4:80,5:375,6:50,7:5740,8:50,9:985,10:14,11:621
+   avail lists: 2:2802,3:239,4:80,5:375,6:50,7:5734,8:50,9:985,10:21,11:620
  38248 multiletter control sequences out of 65536+600000
  68 fonts using 4771623 bytes
- 72i,11n,75p,368b,1030s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,11n,75p,417b,1030s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/opentype/public/lm/lmroman12
 -italic.otf><//?/c:/users/lunit/appdata/local/programs/miktex/fonts/opentype/pub
 lic/lm/lmroman10-regular.otf><c:/users/lunit/appdata/local/programs/miktex/fonts
@@ -733,9 +733,9 @@ rs/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 sy6.pfb><C:/Users/lunit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb>
-Output written on Forzada amortiguada.pdf (6 pages, 535491 bytes).
+Output written on Forzada amortiguada.pdf (6 pages, 539037 bytes).
 
-PDF statistics: 211 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 213 PDF objects out of 1000 (max. 8388607)
  50 named destinations out of 1000 (max. 131072)
  65 words of extra memory for PDF output out of 10000 (max. 100000000)
 

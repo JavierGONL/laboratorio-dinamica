@@ -154,7 +154,7 @@ El montaje corresponde al sistema del banco HVT12 con:
 
     \item Calcular la fuerza de excitación $P_m$ usando la ecuación\eqref{eq:F_exc}, con:
     \[
-        M_h = 0.05616\ \text{kg}, \qquad r = 0.045\ \text{m}
+        M_h = 0.05616\ \text{kg}, \qquad e = 0.045\ \text{m}
     \]
 
 
@@ -185,7 +185,7 @@ El montaje corresponde al sistema del banco HVT12 con:
 
     \begin{equation}
         \varphi_{\text{exp}} =
-        -\left(\dfrac{\Delta t}{T}\right) 2\pi - \dfrac{\pi}{2}
+        -\left(\dfrac{\Delta t}{T}\right) 2\pi + \dfrac{\pi}{2}
         \label{eq:desfase_exp}
     \end{equation}
 
@@ -210,12 +210,12 @@ El montaje corresponde al sistema del banco HVT12 con:
         \toprule
         {Caso} & {$f$ (Hz)} & {$\omega_f$ (rad/s)} & {$P_m$ (N)} & {$\theta_{\exp}$ ($^{\circ}$)} & {$\theta_{teo}$ ($^{\circ}$)} & {$FA$} & {$r = \omega_f/\omega_n$} & {$\varphi_{teo}$ ($^{\circ}$)} & {$\varphi_{\exp}$ ($^{\circ}$)} \\
         \midrule
-        Abierta & 4.20 & 26.3894 & 1.7599 & 0.3257 & 7.2222 & 1.7895 & 0.6642 & 0.3746 & -132.0263 \\
-        Abierta & 4.30 & 27.0177 & 1.8447 & 0.6861 & 7.2222 & 1.8603 & 0.6800 & 0.3987 & -261.3675 \\
-        Abierta & 4.45 & 27.9602 & 1.9757 & 0.5992 & 7.2222 & 1.9813 & 0.7038 & 0.4394 & -197.9133 \\
-        Cerrada & 4.20 & 26.3894 & 1.7599 & 0.3797 & 7.2222 & 1.7895 & 0.6642 & 0.3559 & -260.7307 \\
-        Cerrada & 4.30 & 27.0177 & 1.8447 & 0.3697 & 7.2222 & 1.8603 & 0.6800 & 0.3878 &  -4.0398 \\
-        Cerrada & 4.45 & 27.9602 & 1.9757 & 0.2707 & 7.2222 & 1.9813 & 0.7038 & 0.4175 &   0.2567 \\
+        Abierta & 4.20 & 26.3894 & 1.7599 & 0.3257 & 7.2222 & 1.7895 & 0.6642 & 0.3746 & 125.93 \\
+        Abierta & 4.30 & 27.0177 & 1.8447 & 0.6861 & 7.2222 & 1.8603 & 0.6800 & 0.3987 &  80.55 \\
+        Abierta & 4.45 & 27.9602 & 1.9757 & 0.5992 & 7.2222 & 1.9813 & 0.7038 & 0.4394 &  11.57 \\
+        Cerrada & 4.20 & 26.3894 & 1.7599 & 0.3797 & 7.2222 & 1.7895 & 0.6642 & 0.3559 &  74.19 \\
+        Cerrada & 4.30 & 27.0177 & 1.8447 & 0.3697 & 7.2222 & 1.8603 & 0.6800 & 0.3878 &  50.21 \\
+        Cerrada & 4.45 & 27.9602 & 1.9757 & 0.2707 & 7.2222 & 1.9813 & 0.7038 & 0.4175 &  10.75 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -276,12 +276,15 @@ centrada en $r=1$ y el comportamiento cualitativo coincide con la teoría.
 
 Respecto al desfase, el modelo (Ecuación~\ref{eq:desfase_teorico}) predice que
 $\varphi$ crece desde $0^\circ$ (bajas frecuencias) hacia $180^\circ$ (altas),
-cruzando $90^\circ$ cerca de la resonancia. Los valores experimentales
-reportados, una vez reducidos al intervalo $[0^\circ,180^\circ]$, siguen esta
-tendencia: por ejemplo, para $r=0.680$ con amortiguador \textit{cerrado}
-obtenemos $\varphi_{\text{exp}}\approx4^\circ$, mientras que con amortiguador
-\textit{abierto} a $r=0.664$ se obtiene \mbox{$\varphi_{\text{exp}}\approx132^\circ$},
-coherente con una mayor proximidad relativa a la resonancia efectiva.
+cruzando $90^\circ$ cerca de la resonancia. Los valores experimentales que
+reportamos en la Tabla~\ref{tab:forzada_amortiguada} fueron calculados con el
+criterio de la guía (Ecuación~\ref{eq:desfase_exp}, con $+\pi/2$): a
+$f=4.20$ Hz se obtuvo $\varphi_{\text{exp}}\approx126^\circ$ (abierta) y
+$\approx74^\circ$ (cerrada); a $f=4.30$ Hz, $\approx81^\circ$ (abierta) y
+$\approx50^\circ$ (cerrada); y a $f=4.45$ Hz, valores cercanos a $11^\circ$ en
+ambas configuraciones. La tendencia con la frecuencia y el efecto del
+amortiguamiento son consistentes con la teoría: mayor $\zeta$ desplaza la
+transición de fase y reduce la proximidad efectiva a la resonancia.
 
 En síntesis, las diferencias entre $\theta_m^{\text{exp}}$ y
 $\theta_m^{\text{teo}}$ permanecen pequeñas en el rango explorado y el efecto
