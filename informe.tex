@@ -8,17 +8,17 @@
 \newcommand{\gtapprox}{\gtrsim}
 \newcommand{\ltapprox}{\lesssim}
 \usepackage[spanish,activeacute]{babel}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{cite}
 \usepackage{float}
 \usepackage[hidelinks]{hyperref}
-\usepackage[utf8]{inputenc}
 \usepackage{caption}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[svgnames]{xcolor}
+\usepackage{newtxtext}
 \definecolor{darklavender}{rgb}{0.45, 0.31, 0.59}
 \definecolor{brandeisblue}{rgb}{0.0, 0.44, 1.0}
 \definecolor{cinnamon}{rgb}{0.82, 0.41, 0.12}
@@ -34,7 +34,7 @@
     Hernandez Daza Juan David, Mahecha Cruz Joseph Nicolás, \\
     Maluche Suarez Ivan Felipe, Luna Gonzalez Kevin Javier \\
     \textit{Universidad Nacional de Colombia, Facultad de Ingeniería, Bogotá D.C.} \\
-    \{kegonzalezl, jomahecha, imaluche, correo\}@unal.edu.co
+    \{kegonzalezl, jomahecha, imaluche, jhernandezd\}@unal.edu.co
 }
 
 \maketitle
@@ -48,21 +48,43 @@
 
 \end{IEEEkeywords}
 
+\tableofcontents
+\newpage
+
+
 \section{Introducción}
 
-\section{Objetivos del Proyecto}
+El estudio de las vibraciones en sistemas mecánicos constituye una piedra angular en el diseño, diagnóstico y aseguramiento de la confiabilidad de estructuras y máquinas. Las oscilaciones —libres, forzadas o amortiguadas— condicionan el comportamiento dinámico de componentes que van desde vigas y ejes hasta ensamblajes completos; su correcta caracterización permite prevenir fallas por fatiga, optimizar el aislamiento vibratorio y diseñar estrategias de control y amortiguamiento. En términos generales, un enfoque riguroso de vibraciones combina modelado teórico (representación mediante grados de libertad y parámetros dinámicos), análisis espectral (identificación de frecuencias naturales y modos) y mediciones experimentales que validen las hipótesis del modelo y cuantifiquen incertidumbres. Esta confluencia entre teoría y experimento es esencial para traducir predicciones analíticas en criterios prácticos de diseño e inspección. \cite{Ewins2000} \cite{Inman2013}
+
+Desde la perspectiva del modelado, muchos problemas prácticos pueden aproximarse inicialmente por modelos de un grado de libertad (1GDL) o por conjuntos reducidos de grados de libertad que capturan la dinámica dominante. Estos modelos permiten definir magnitudes clave —frecuencia natural $\omega_n$, factor de amortiguamiento $\zeta$, razón de forzamiento $r=\omega_f/\omega_n$ y factor de amplificación (FA)— y predecir comportamientos críticos como la resonancia o la inversión de fase entre excitación y respuesta. Sin embargo, los modelos ideales requieren complementariedad experimental: parámetros como el amortiguamiento efectivo, la rigidez equivalente o el momento de inercia suelen estimarse o corregirse a partir de mediciones, y la incertidumbre asociada a esos parámetros impacta directamente en criterios de seguridad y diseño. \cite{DenHartog1985} 
+
+La excitación por desequilibrio rotacional (masas excéntricas) es un caso de estudio didáctico y de interés práctico por dos razones principales. Primero, genera una fuerza periódica cuya magnitud escala con el cuadrado de la velocidad angular, lo que facilita estudiar la dependencia entre excitación y respuesta. Segundo, al poder controlar la frecuencia de excitación, el ensayo permite explorar distintos regímenes dinámicos —desde relaciones $r\ll 1$ hasta regiones próximas a la resonancia ($r\approx 1$) y zonas inerciales ($r\gg 1$)—, validando predicciones teóricas sobre amplificación y desfase sin introducir condiciones de carga excesivamente complejas. Cuando se combina este tipo de excitación con análisis temporal y espectral, se obtiene una visión integradora de la dinámica real frente al modelo idealizado. \cite{ISO_10816_1_1995}
+
+El papel del amortiguamiento en la dinámica estructural merece especial énfasis: fracciones pequeñas de amortiguamiento modifican sustancialmente la altura y el ancho de la curva de resonancia, afectan el valor máximo del factor de amplificación y condicionan la evolución temporal de la respuesta libre. Por ello, la identificación experimental del amortiguamiento (por decremento logarítmico, análisis de envolvente o métodos modales) es crítica para que las predicciones teóricas posean relevancia cuantitativa en aplicaciones reales.
+
+Además de la modelación y la cuantificación de parámetros, la medición experimental introduce desafíos instrumentales y de procesamiento de señal que deben considerarse desde la introducción conceptual. La adecuada conversión de señales (por ejemplo, voltaje a desplazamiento), un muestreo acorde con las frecuencias de interés, la selección de ventanas en régimen estacionario y la atención a fuentes de error sistemático (offsets de sensores, retardos en adquisición, errores geométricos) condicionan la fidelidad de la caracterización dinámica. Describir y controlar estas fuentes de error transforma las mediciones en parámetros útiles para diseño y diagnóstico. \cite{Rao_2016}
+
+Finalmente, el alcance de un trabajo experimental de vibraciones debe quedar delimitado: el objetivo es caracterizar la dinámica del sistema bajo estudio dentro del marco de modelos vibracionales clásicos, evaluar la concordancia cualitativa y cuantitativa entre teoría y medición, y determinar implicaciones prácticas en términos de amplificación, resonancia y disipación. 
+
+
+\section{Objetivos del Laboratorio}
 
 \subsection{Objetivo General}
 
-\subsection{Objetivos Específicos}
-\begin{enumerate}
+Caracterizar experimentalmente el comportamiento dinámico (frecuencias naturales, amortiguamiento, factor de amplificación y desfase) de una viga rígida con un grado de libertad sometida a vibración libre, vibración forzada por masas excéntricas y configuraciones de amortiguamiento (abierto/cerrado), y comparar las respuestas medidas con las predicciones del modelo SDOF.
 
+\subsection{Objetivos Específicos}
+
+\begin{enumerate}
+  \item Determinar la frecuencia natural y el periodo del sistema mediante ensayos de vibración libre y comparar con el valor teórico del modelo 1GDL. % 
+  \item Estimar el amortiguamiento efectivo en las configuraciones (abierto/cerrado) usando métodos de decremento logarítmico y cálculo del amortiguamiento crítico. % 
+  \item Cuantificar la respuesta en vibración forzada para varias frecuencias de excitación: calcular \(P_m\), \(\theta_{exp}\), \(\theta_{teo}\), \(FA_{exp}\) y \(FA_{teo}\), y analizar la dependencia \(P_m\propto\omega_f^2\). % 
+  \item Evaluar el desfase entre excitación y respuesta experimental y analizar discrepancias con el modelo (posibles fuentes: offsets de sensores, referencia de fase, retardos de adquisición). % 
+  \item Implementar procesamiento reproducible (scripts en Python) que permita generar tablas, gráficas y cálculos automáticos para facilitar el análisis de incertidumbre y la trazabilidad de resultados. % 
 \end{enumerate}
 
-\section{Estado del arte}
 
-
-\section{Normatividad y Ensayos Técnicos(Marco Teorico)}
+\section{Normatividad y Ensayos Técnicos(Marco Teorico y Desarrollo de Modelos Teoricos)}
 
 \subsection{Vibración Libre}
 
@@ -83,9 +105,113 @@ A partir de la cual se obtienen el período y frecuencia natural:
 
 \subsection{Vibración Forzada}
 
-% Placeholder para vibración forzada
+\label{sec:vibracion_forzada}
+
+El sistema estudiado corresponde a una viga rígida con un grado de libertad sometida a una excitación armónica originada por masas excéntricas en rotación. La fuerza centrífuga generada por la(s) masa(s) excéntrica(s) proyectada verticalmente sobre la viga varía con el cuadrado de la velocidad angular de rotación:
+\begin{equation}\label{eq:Pm}
+P_m = M_h \, r \, \omega_f^2
+\end{equation}
+donde \(M_h\) es la masa excéntrica (kg), \(r\) su excentricidad (m) y \(\omega_f\) la velocidad angular de excitación (rad/s). Dicha fuerza produce un momento periódico sobre la viga y la ecuación de movimiento rotacional, en ausencia de amortiguamiento, puede escribirse como:
+\begin{equation}\label{eq:eom_forzada}
+I\,\ddot{\theta}(t) + kL^2\,\theta(t) = P_m\cos(\omega_f t)
+\end{equation}
+donde \(I\) es el momento de inercia respecto al pivote (kg·m\(^2\)), \(k\) la constante elástica lineal del resorte (N/m) y \(L\) la palanca que relaciona la rigidez lineal con la rigidez torsional (m), de modo que la rigidez torsional equivalente es \(K_\theta = kL^2\). El término \(P_m\) en (\ref{eq:eom_forzada}) representa el término forzante proyectado como momento.
+
+La frecuencia natural del sistema se obtiene de la relación:
+\begin{equation}\label{eq:omegan}
+\omega_n=\sqrt{\dfrac{kL^2}{I}}=\sqrt{\dfrac{K_\theta}{I}}.
+\end{equation}
+A partir de \(\omega_n\) definimos el periodo y la frecuencia natural
+\begin{equation}\label{eq:Tn_fn}
+T_n=\dfrac{2\pi}{\omega_n}, \qquad f_n=\dfrac{1}{T_n}.
+\end{equation}
+
+Buscando la solución particular en régimen estacionario se asume
+\begin{equation}\label{eq:sol_part}
+\theta(t)=\Theta\cos(\omega_f t - \varphi),
+\end{equation}
+y la amplitud estacionaria del movimiento (modelo no amortiguado) viene dada por
+\begin{equation}\label{eq:Theta_teo}
+\Theta \;=\; \dfrac{P_m}{\big|\,kL^2 - I\,\omega_f^2\,\big|} \;=\; \dfrac{M_h\,r\,\omega_f^2}{\big|\,kL^2 - I\,\omega_f^2\,\big|}.
+\end{equation}
+La amplitud estática correspondiente al mismo valor de momento forzante es
+\begin{equation}\label{eq:Theta_est}
+\Theta_{\mathrm{est}}=\dfrac{P_m}{kL^2}=\dfrac{M_h\,r\,\omega_f^2}{kL^2}.
+\end{equation}
+
+Definiendo la razón adimensional
+\begin{equation}\label{eq:razon_r}
+r=\dfrac{\omega_f}{\omega_n},
+\end{equation}
+el \emph{factor de amplificación} (FA) para el modelo sin amortiguamiento se expresa como
+\begin{equation}\label{eq:FA_undamped}
+\mathrm{FA} \;=\; \dfrac{\Theta}{\Theta_{\mathrm{est}}} \;=\; \dfrac{1}{\big|\,1 - r^2\,\big|}.
+\end{equation}
+
+\paragraph{Comentario sobre resonancia.} En el modelo sin amortiguamiento la amplitud teórica diverge cuando \(\omega_f \to \omega_n\) (es decir \(r\to 1\)), lo que indica la existencia de una resonancia ideal. En la práctica, la presencia de amortiguamiento físico (disipación) limita la amplitud máxima alcanzable; por ello, para predicciones cuantitativas cercanas a resonancia es necesario emplear el modelo amortiguado y la expresión de FA que incluye el coeficiente de amortiguamiento \(\zeta\):
+\begin{equation}\label{eq:FA_damped}
+\mathrm{FA}_\zeta=\dfrac{1}{\sqrt{(1-r^2)^2+(2\zeta r)^2}}.
+\end{equation}
+
+\paragraph{Notas experimentales breves.}
+\begin{itemize}
+  \item Convertir la señal del LVDT (mV) a desplazamiento lineal y luego a ángulo mediante \(\theta=\delta/d\), donde \(d\) es la distancia entre el LVDT y el pivote (m) —usar ángulos pequeños.
+  \item Calcular \(P_m\) por (\ref{eq:Pm}), obtener \(\Theta_{\mathrm{est}}\) por (\ref{eq:Theta_est}) y comparar con la amplitud experimental \(\Theta_{\mathrm{exp}}\). El FA experimental se obtiene como \(\mathrm{FA}_{\mathrm{exp}}=\Theta_{\mathrm{exp}}/\Theta_{\mathrm{est}}\).
+  \item Reportar advertencia de resonancia cuando \(|1-r^2|\) sea pequeño y preferir el análisis amortiguado para esos casos.
+\end{itemize}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{out/vibracion Forzada.png}
+    \caption{Esquema vibración forzada}
+    \label{fig:Vibracion FOrzasda}
+\end{figure}
+
+
 
 \subsection{Vibración Libre Amortiguada}
+Este sistema estudia la respuesta de un sistema rotacional con un grado de libertad el cual es sometido a vibración libre amortiguada. El modelo físico corresponde a una viga rígida oscilando alrededor de un pivote, en la cual actúan dos efectos principales: la rigidez restauradora del resorte y la disipación introducida por el sistema de amortiguamiento. El comportamiento dinámico del sistema se describe mediante la ecuación diferencial rotacional
+\begin{equation}\label{eq:vibracion_libre_amort}
+I\ddot{\theta} + C\dot{\theta} + k\theta = 0,
+\end{equation}
+siendo \(I\) el momento de inercia de la viga respecto al pivote, \(C\) el coeficiente de amortiguamiento viscoso y \(k\) la rigidez equivalente que produce el resorte sobre el movimiento angular. En ausencia de amortiguamiento, esta ecuación se reduce a:
+\begin{equation}\label{eq:vibracion_libre_no_amort}
+I\ddot{\theta} + k\theta = 0,
+\end{equation}
+y la frecuencia natural no amortiguada se obtiene como:
+
+\begin{equation}
+\omega_n = \sqrt{\frac{k}{I}}
+\end{equation}
+
+Cuando el amortiguamiento es pequeño, la solución del sistema es oscilatoria y muestra una amplitud decreciente en el tiempo. Esta respuesta se caracteriza por la frecuencia amortiguada, definida como:
+
+\begin{equation}
+\omega_d = \omega_n \sqrt{1 - \zeta^{2}},
+\end{equation}
+
+donde \(\zeta\) es el factor de amortiguamiento. Para determinar experimentalmente el amortiguamiento del sistema, se emplea el decremento logarítmico, basado en la relación entre dos picos máximos de la oscilación separados por \(n\) ciclos completos:
+
+\begin{equation}
+\delta = \ln\left(\frac{d_0}{d_n}\right).
+\end{equation}
+
+En sistemas con amortiguamiento débil, la relación entre \(\delta\) y el factor de amortiguamiento está dada por:
+
+\begin{equation}
+\zeta = \frac{\delta}{\sqrt{4\pi^{2} + \delta^{2}}},
+\end{equation}
+
+lo que permite obtener \(\zeta\) directamente a partir de la medición de los picos de la señal del sensor LVDT.
+
+El valor del amortiguamiento crítico es una referencia teórica que separa un sistema oscilatorio de un sistema sobreamortiguado. Para el montaje utilizado, la expresión del amortiguamiento crítico en coordenadas rotacionales es:
+
+\begin{equation}
+C_{\text{critico}} = \frac{2 I_a \omega_n}{L^{2}},
+\end{equation}
+
+donde \(I_a\) es el momento de inercia del sistema considerando el amortiguador ensamblado y \(L\) la distancia efectiva entre la fuerza restauradora y el pivote. Al comparar el valor experimental del amortiguamiento con este límite se puede clasificar el sistema como subamortiguado, tal como ocurre en las condiciones de prueba del experimento.\cite{Hibbeler_2010}
 
 % Placeholder para vibración libre amortiguada
 
@@ -149,6 +275,291 @@ Procedimiento:
 
 \subsection{Vibración Forzada}
 
+
+\subsubsection{Materiales y equipos}
+\begin{itemize}
+  \item Banco de ensayos HVT con viga rígida y pivote.
+  \item Motor exciter HAC120 con masas excéntricas (masa $M_h$ y excentricidad $r$).
+  \item Resorte de restitución con constante elástica lineal $k$.
+  \item LVDT (sensibilidad $S$ en mV/mm) y equipo de adquisición (PicoScope u otro).
+  \item Tacómetro para verificar la velocidad de rotación del motor.
+  \item Ordenador con Python (bibliotecas: \texttt{numpy}, \texttt{pandas}, \texttt{scipy}) y el script \texttt{analisis\_forzada\_undamped.py}.
+\end{itemize}
+
+\subsubsection{Montaje experimental}
+El sensor LVDT se monta en el extremo de la viga de tal forma que sus lecturas de desplazamiento lineal $\delta$ (mV) correspondan a la rotación angular $\theta$ mediante la aproximación de pequeños ángulos:
+\[
+\theta \approx \dfrac{\delta_{\mathrm{m}}}{d},
+\]
+donde $d$ es la distancia LVDT–pivote (m) y $\delta_{\mathrm{m}}$ es el desplazamiento en metros. La masa excéntrica $M_h$ gira con radio $r$ y la fuerza centrífuga generada es proyectada verticalmente sobre la viga. La palanca efectiva entre la línea de acción de la fuerza y el pivote se denota $L$ (m).
+
+\subsubsection{Procedimiento experimental}
+\begin{enumerate}
+  \item Encender el motor y seleccionar una velocidad de operación menor (con una diferencia máxima de 1\,Hz) al valor correspondiente según la constante elástica $k$ utilizada (ver Tabla~VII del anexo).
+  \item Una vez estable la velocidad, registrar el voltaje entregado por el LVDT durante un tiempo suficientemente largo para alcanzar régimen estacionario (recomendado: registrar al menos 10 períodos de la excitación en estado estacionario).
+  \item Repetir el procedimiento para tres velocidades diferentes (separadas convenientemente para observar la respuesta fuera y cerca de resonancia).
+  \item Exportar los datos en archivos \texttt{.csv} (formato: separador ``;'' y coma decimal si se usa PicoScope en configuración local) para posterior procesamiento.
+\end{enumerate}
+
+\subsubsection{Adquisición de datos}
+\begin{itemize}
+  \item Formato de cada archivo CSV esperado: columnas \texttt{Tiempo\_ms}, \texttt{CanalA\_V}, \texttt{CanalB\_mV} (o equivalente). Convertir \texttt{Tiempo\_ms} a segundos: $t[\mathrm{s}]=\mathrm{Tiempo\_ms}/1000$.
+  \item Frecuencia de muestreo $f_s$ debe ser suficientemente mayor que la frecuencia de excitación: \(\;f_s \ge 10\ f_{\text{f}}\) (preferible) para resolver forma de onda y estimar fase con buena resolución.
+  \item Guardar metadatos en un archivo de acompañamiento o en el nombre del archivo (p.\,ej. \texttt{forzada\_f10\_Mh56.16g\_r45mm.csv}).
+\end{itemize}
+
+\subsubsection{Procesamiento de datos}
+Todo el procesamiento se realiza en dos etapas: (1) conversión y preprocesado de la señal; (2) cálculo de magnitudes dinámicas teóricas y experimentales.
+
+\begin{itemize}
+
+\item{ Conversión y preprocesado}
+\begin{enumerate}
+  \item Leer CSV y obtener vectores tiempo \(t\) y señal del LVDT \(V_{\mathrm{mV}}(t)\).
+  \item Convertir voltaje a desplazamiento lineal (mm) usando la sensibilidad \(S\) (mV/mm):
+    \[
+    \delta_{\mathrm{mm}}(t)=\dfrac{V_{\mathrm{mV}}(t)}{S}, \qquad
+    \delta_{\mathrm{m}}(t)=\dfrac{\delta_{\mathrm{mm}}(t)}{1000}.
+    \]
+  \item Convertir desplazamiento lineal a ángulo (rad) mediante la distancia LVDT–pivote $d$:
+    \[
+    \theta_{\mathrm{exp}}(t)=\dfrac{\delta_{\mathrm{m}}(t)}{d}.
+    \]
+  \item Seleccionar la ventana de régimen estacionario (se sugiere usar la fracción final de la señal; parámetro \texttt{steady\_fraction}, por ejemplo $0.3\!-\!0.5$) para calcular amplitudes representativas.
+  \item Filtrado opcional: si existe ruido de alta frecuencia, aplicar un filtro pasa-bajo (orden bajo) o un suavizado. Preferir filtros que no introduzcan desfase significativo si se necesita estimar fase.
+\end{enumerate}
+
+\item{ Estimaciones espectrales y amplitud}
+\begin{enumerate}
+  \item Estimar la frecuencia dominante \(f\) de la señal por medio de FFT en la ventana seleccionada (o detectar picos en el dominio temporal) y calcular \(\omega_f = 2\pi f\).
+  \item Calcular la amplitud pico en régimen estable:
+    \[
+    A_{\mathrm{pk}} = \dfrac{\max(\theta_{\mathrm{exp}}) - \min(\theta_{\mathrm{exp}})}{2}
+    \]
+    (alternativa más robusta: detectar picos sucesivos y promediarlos).
+  \item Calcular valor RMS si se requiere como medida de energía:
+    \[
+    A_{\mathrm{rms}} = \sqrt{\dfrac{1}{N}\sum_{i=1}^{N}\theta_{\mathrm{exp}}(t_i)^2 }.
+    \]
+\end{enumerate}
+
+\item{Cálculos teóricos y comparaciones}
+Con los parámetros del sistema (masa excéntrica \(M_h\), excentricidad \(r\), Longitud \(L\), rigidez lineal \(k\), distancia LVDT–pivote \(d\) y periodo natural \(T_n\)) se calculan las siguientes cantidades:
+
+\end{itemize}
+
+\begin{itemize}
+  \item Fuerza centrífuga (magnitud) utilizada en la formulación:
+    \[
+    P_m = M_h\,r\,\omega_f^2.
+    \]
+  \item Momento excitador (torque) aplicado al pivote:
+    \[
+    \tau_m = P_m \, L = M_h\,r\,L\,\omega_f^2.
+    \]
+    \textbf{Nota:} si en su montaje $L=r$, entonces \(\tau_m=M_h r^2\omega_f^2\); en general $L$ y $r$ son distintas y deben mantenerse separadas.
+  \item Rigidez torsional equivalente: \(K_\theta = k L^2\).
+  \item Momento de inercia a partir de \(K_\theta\) y periodo natural \(T_n\):
+    \[
+    \omega_n = \dfrac{2\pi}{T_n}, \qquad I = \dfrac{K_\theta}{\omega_n^2}.
+    \]
+  \item Amplitud estática:
+    \[
+    \Theta_{\mathrm{est}} = \dfrac{\tau_m}{K_\theta}.
+    \]
+  \item Amplitud teórica (sin amortiguamiento):
+    \[
+    \Theta_{\mathrm{teo}} = \dfrac{\tau_m}{\big|\,K_\theta - I\,\omega_f^2\,\big|}.
+    \]
+  \item Factor de amplificación teórico (sin amortiguamiento):
+    \[
+    \mathrm{FA}_{\mathrm{teo}} = \dfrac{1}{\big|\,1 - (\omega_f/\omega_n)^2\,\big|}.
+    \]
+  \item Factor de amplificación experimental:
+    \[
+    \mathrm{FA}_{\mathrm{exp}} = \dfrac{\Theta_{\mathrm{exp}}}{\Theta_{\mathrm{est}}}.
+    \]
+\end{itemize}
+
+\subsubsection{Validación y detección de resonancia}
+Si el denominador en la expresión de \(\Theta_{\mathrm{teo}}\) o la expresión de \(\mathrm{FA}_{\mathrm{teo}}\) es cercano a cero (criterio sugerido: \(|1 - (\omega_f/\omega_n)^2| < \varepsilon\) con \(\varepsilon\in[10^{-3},10^{-2}]\)), se debe reportar una advertencia de \emph{cercanía a resonancia}. En estos casos, el modelo sin amortiguamiento no es válido para predicciones cuantitativas y se debe emplear la expresión amortiguada:
+\[
+\mathrm{FA}_\zeta=\dfrac{1}{\sqrt{(1-r^2)^2 + (2\zeta r)^2}},\qquad r=\dfrac{\omega_f}{\omega_n}.
+\]
+
+\subsubsection{Análisis de incertidumbres}
+Estimar aportes principales de incertidumbre y su efecto en las cantidades calculadas:
+\begin{itemize}
+  \item \textbf{Sensibilidad del LVDT ($S$):} error en $S$ produce error proporcional en \(\theta\).
+  \item \textbf{Distancia $d$ (LVDT–pivote):} incertidumbre en $d$ se traduce en incertidumbre inversamente proporcional en \(\theta\).
+  \item \textbf{Parámetros mecánicos ($M_h$, $r$, $L$, $k$, $T_n$):} errores en estos parámetros afectan \(\tau_m\), \(K_\theta\) e \(I\) y por ende \(\Theta_{\mathrm{teo}}\). Recomendar: propagar incertidumbres usando diferencial total o método de Monte Carlo para estimar incertidumbre combinada en \(\mathrm{FA}\).
+\end{itemize}
+
+\subsubsection{Entregables y formato de resultados}
+Para cada ensayo (archivo CSV) se generarán:
+\begin{itemize}
+  \item Tabla con: frecuencia de excitación $f$, $\omega_f$, $P_m$, $\tau_m$, $\Theta_{\mathrm{exp}}$ (en rad y grados), $\Theta_{\mathrm{est}}$, $\Theta_{\mathrm{teo}}$, $\mathrm{FA}_{\mathrm{teo}}$, $\mathrm{FA}_{\mathrm{exp}}$, nota de resonancia.
+  \item Gráficas: $\theta(t)$ (señal completa y zoom a régimen estacionario), espectro FFT (magnitud vs frecuencia), curva $\mathrm{FA}$ teórica (vs $r$) con punto experimental marcado.
+  
+\end{itemize}
+
+\subsubsection{uso de codigos y Script}
+
+Es importante recalcar que el uso de herramientas como python y demas son de gran ayuda para la resolución de este tipo de problemas automatizando calculos y generando los datos de manera ordenada y practica, por ende es recomendable utilizar scripts y hacer el planteamiento y calculo de manera virtual o por codigo. 
+
+\subsection{Vibración Libre Amortiguada}
+\subsection*{Montaje experimental}
+
+El sistema corresponde al banco HVT12f, compuesto por una viga rígida apoyada en un pivote, un resorte lineal que aporta la rigidez restauradora y un sistema de amortiguamiento viscoso con discos sumergidos en fluido, configurable en posición abierta o cerrada. El desplazamiento del extremo de la viga se mide mediante un sensor LVDT y se registra con un osciloscopio, que permite exportar los datos en formato CSV para su análisis posterior.
+
+\subsection*{Procedimiento}
+El procedimiento experimental se desarrolló siguiendo las instrucciones establecidas en la guía de laboratorio \cite{Guia_Vibraciones_UNAL}, realizando las siguientes etapas:
+\begin{enumerate}
+    \item Configurar la posición del amortiguador seleccionando una de las dos configuraciones del experimento: amortiguador abierto o amortiguador cerrado.
+
+    \item Verificar la instalación de la viga rígida, asegurando que el pivote permita un movimiento libre y que el resorte esté correctamente conectado al sistema.
+
+    \item Alinear y calibrar el sensor LVDT comprobando que el núcleo móvil siga correctamente el desplazamiento del extremo de la viga sin interferencias.
+
+    \item Desplazar manualmente la viga desde su posición de equilibrio y soltarla sin aplicar fuerza adicional para generar una oscilación libre amortiguada.
+
+    \item Registrar en el osciloscopio la señal del LVDT, capturando la evolución temporal del desplazamiento durante varios ciclos consecutivos.
+
+    \item Guardar los datos en formato CSV para su análisis posterior.
+
+    \item Repetir nuevamente todo el procedimiento activando la otra configuración del amortiguador, obteniendo así las dos tomas de datos requeridas: una con el amortiguador abierto y otra con el amortiguador cerrado.
+
+    \item Identificar en cada registro los picos máximos de oscilación, seleccionando dos picos consecutivos o separados por un número conocido de ciclos para calcular el decremento logarítmico.
+
+    \item Determinar el factor de amortiguamiento, la frecuencia amortiguada, la frecuencia natural no amortiguada y los coeficientes de amortiguamiento para ambas configuraciones utilizando los parámetros geométricos y de masa proporcionados en la guía.
+\end{enumerate}
+\subsection*{Procesamiento de datos:}
+
+\subsubsection{Vibración Libre Amortiguada cerrada}
+\begin{enumerate}
+    \item Importar en Excel el archivo CSV correspondiente a la toma de datos con el amortiguador cerrado.
+
+    \item Identificar nuevamente la columna de tiempo \(T\) (ms) y la columna de la señal del LVDT (mV).
+
+    \item Buscar en la señal los máximos positivos de la vibración y seleccionar dos picos consecutivos (o separados por \(n\) ciclos), anotando:
+    \[
+    D_0',\; T_0' \quad\text{y}\quad D_1',\; T_1'.
+    \]
+
+    \item Convertir a unidades del SI:
+    \[
+    t_0' = \frac{T_0'}{1000}, \qquad t_1' = \frac{T_1'}{1000},
+    \]
+    \[
+    d_0' = \frac{D_0'}{1000}, \qquad d_1' = \frac{D_1'}{1000}.
+    \]
+
+    \item Calcular el decremento logarítmico para el caso cerrado:
+    \[
+    \delta' = \ln\left(\frac{d_0'}{d_1'}\right).
+    \]
+
+    \item Determinar el factor de amortiguamiento:
+    \[
+    \zeta' = \frac{\delta'}{\sqrt{4\pi^{2} + \delta'^{2}}}.
+    \]
+
+    \item Obtener el período amortiguado:
+    \[
+    T_d' = |t_1' - t_0'|.
+    \]
+
+    \item Calcular la frecuencia angular amortiguada:
+    \[
+    \omega_d' = \frac{2\pi}{T_d'}.
+    \]
+
+    \item Determinar la frecuencia natural no amortiguada correspondiente a esta configuración:
+    \[
+    \omega_n' = \frac{\omega_d'}{\sqrt{1 - \zeta'^{2}}}.
+    \]
+
+    \item Calcular el momento de inercia efectivo respecto al pivote para el sistema con amortiguador cerrado (incluyendo la masa adicional del vástago y discos):
+    \[
+    I_c = I_{cm,c} + m_c x^{2},
+    \]
+    donde \(I_{cm,c}\) y \(m_c\) representan el momento de inercia respecto al centro de masa y la masa total en la configuración cerrada.
+
+    \item Con este momento de inercia y el mismo brazo efectivo \(L\), calcular el amortiguamiento crítico:
+    \[
+    C_{\text{crítico,cerrado}} = \frac{2 I_c \omega_n'}{L^{2}}.
+    \]
+
+    \item Obtener el coeficiente de amortiguamiento experimental para el caso cerrado:
+    \[
+    C_{\text{cerrado}} = \zeta' \, C_{\text{crítico,cerrado}}.
+    \]
+\end{enumerate}
+
+\subsubsection{Vibración Libre Amortiguada abierta}
+\begin{enumerate}
+    \item Importar en Excel el archivo CSV correspondiente a la toma de datos con el amortiguador abierto.
+
+    \item Identificar la columna de tiempo \(T\) (en milisegundos) y la columna de señal del LVDT asociada al desplazamiento/ángulo (en milivoltios).
+
+    \item Localizar en la columna de la señal los máximos positivos que corresponden a los picos de la vibración. Seleccionar dos picos consecutivos bien definidos (o separados por \(n\) ciclos completos) y anotar:
+    \[
+    D_0,\; T_0 \quad\text{y}\quad D_1,\; T_1
+    \]
+    donde \(D_0\) y \(D_1\) son las amplitudes máximas en milivoltios y \(T_0\), \(T_1\) los instantes de tiempo en milisegundos.
+
+    \item Convertir las magnitudes a unidades del SI:
+    \[
+    t_0 = \frac{T_0}{1000}, \qquad t_1 = \frac{T_1}{1000},
+    \]
+    \[
+    d_0 = \frac{D_0}{1000}, \qquad d_1 = \frac{D_1}{1000},
+    \]
+    obteniendo tiempos en segundos y amplitudes en voltios.
+
+    \item Calcular el decremento logarítmico a partir de los dos picos seleccionados:
+    \[
+    \delta = \ln\left(\frac{d_0}{d_1}\right).
+    \]
+
+    \item Determinar el factor de amortiguamiento del sistema:
+    \[
+    \zeta = \frac{\delta}{\sqrt{4\pi^{2} + \delta^{2}}}.
+    \]
+
+    \item Obtener el período amortiguado a partir de la diferencia de tiempos entre los picos:
+    \[
+    T_d = |t_1 - t_0|.
+    \]
+
+    \item Calcular la frecuencia angular amortiguada:
+    \[
+    \omega_d = \frac{2\pi}{T_d}.
+    \]
+
+    \item Determinar la frecuencia natural no amortiguada del sistema:
+    \[
+    \omega_n = \frac{\omega_d}{\sqrt{1 - \zeta^{2}}}.
+    \]
+
+    \item Calcular el momento de inercia efectivo respecto al pivote para la configuración con amortiguador abierto, utilizando el teorema del eje paralelo el cual se obtuvo de los principios de dinámica de cuerpos rígidos expuestos\cite{Beer_Dinamica_2010}.
+    \[
+    I_a = I_{cm} + m x^{2},
+    \]
+    donde \(I_{cm}\) es el momento de inercia respecto al centro de masa de la viga, \(m\) la masa total asociada a esta configuración y \(x\) la distancia entre el centro de masa y el pivote.
+
+    \item Con el momento de inercia \(I_a\) y el brazo efectivo \(L\) definido en la guía, calcular el amortiguamiento crítico:
+    \[
+    C_{\text{crítico,abierto}} = \frac{2 I_a \omega_n}{L^{2}}.
+    \]
+
+    \item Obtener el coeficiente de amortiguamiento experimental para el caso abierto:
+    \[
+    C_{\text{abierto}} = \zeta \, C_{\text{crítico,abierto}}.
+    \]
+\end{enumerate}
+
+
 \subsection{Vibración Forzada Amortiguada}
 
 El montaje corresponde al sistema del banco HVT12 con:
@@ -210,15 +621,6 @@ Procedimiento:
     donde $T$ es el período de la excitación.
 \end{enumerate}
 
-\subsubsection{Vibración Forzada Amortiguada cerrada}
-
-\subsubsection{Vibración Forzada Amortiguada abierta}
-
-\subsection{Vibración Libre Amortiguada}
-
-\subsubsection{Vibración Libre Amortiguada cerrada}
-
-\subsubsection{Vibración Libre Amortiguada abierta}
 
 
 \section{Resultados y Análisis}
@@ -234,10 +636,14 @@ Analizando los datos obtenidos durante el experimento es posible hallar:
 \end{itemize}
 
 El segundo dato nos permite obtener el valor de la distancia máximo a partir de la siguiente relación:
-\[\theta_{max} = \frac{v_{max}}{350}= 1.428 \text{ mm}\]
+\begin{equation}
+\theta_{max} = \frac{v_{max}}{350}= 1.428 \text{ mm}
+\end{equation}
 
 A su vez este valor puede convertirse a un ángulo usando cinemática de cuerpo rígido: 
-\[\theta_{max} = \frac{1.428}{119} = 0.01200\text{ rad}\]
+\begin{equation}
+\theta_{max} = \frac{1.428}{119} = 0.01200\text{ rad}
+\end{equation}
 
 \subsubsection{Valores Teóricos y Procesamiento de Datos}
 
@@ -295,6 +701,149 @@ En la Figura~\ref{fig:libre_angulo_tiempo_informe} se presenta la gráfica obten
     \caption{Ángulo vs tiempo para vibración libre.}
     \label{fig:libre_angulo_tiempo_informe}
 \end{figure}
+
+\subsection{Vibración Forzada}
+\label{sec:ensayos_forzada}
+
+El sistema de vibración forzada se sometió a tres condiciones de excitación (tres frecuencias distintas), cuyos valores se presentan en la Tabla \emph{X} más adelante. Para cada ensayo se siguió el siguiente procedimiento de cálculo y verificación:
+
+\begin{table}[h]
+\caption{Resumen consolidado de resultados experimentales (Vibración Forzada sin amortiguamiento, $\zeta=0$).}
+\label{tab:libre}
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{c c c c c c c}
+\hline
+\textbf{Frecuencia $f$ (Hz)} & \textbf{$P_m$ (N)} & \textbf{$\theta_{\mathrm{exp}}$ (°)} & \textbf{$\theta_{\mathrm{teo}}$ (°)} & \textbf{FA (teórico)} & \textbf{$r=\omega_f/\omega_n$} & \textbf{FA (exp)} \\
+\hline
+4.1047 & 1.6806 & 0.2120 & 0.001264 & 0.002381 & 20.519 & 0.3995 \\
+4.5126 & 2.0320 & 0.4174 & 0.001479 & 0.001968 & 22.558 & 0.6627 \\
+4.8143 & 2.3129 & 0.6346 & 0.001736 & 0.001730 & 24.067 & 0.6324 \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+
+Todo el procesamiento y los cálculos descritos se automatizaron mediante un script en Python (\texttt{analisis\_forzada\_undamped.py}), que realiza las siguientes tareas de forma reproducible: lectura de archivos \texttt{.csv}, conversión LVDT~(mV)\(\rightarrow\)mm\(\rightarrow\)rad, estimación de la frecuencia dominante por FFT (si procede), cálculo de amplitudes en régimen estacionario, cálculo de \(P_m\), \(\tau_m\), \(\Theta_{\mathrm{exp}}\), \(\Theta_{\mathrm{teo}}\), FA teórica y FA experimental, y generación automática de tablas y figuras en formato listo para incluir en el informe. El código fuente, los parámetros usados y las salidas numéricas completas se incluyen en el Anexo.
+
+
+También se construyeron gráficas ángulo vs tiempo para cada frecuencia a la cual fue sometido el dispositivo, como también se construyó una gráfica FA vs. ωf /ωn, junto con todos los codigos para su ejecución(véase en el anexo).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{out/Vibracion Forzada 4_1hz .png}
+    \caption{Ángulo vs tiempo para vibración Forzada 4.1 Hz.}
+    \label{fig:libre_angulo_tiempo_informe}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{out/Vibracion Forzada 4_5hz .png}
+    \caption{Ángulo vs tiempo para vibración Forzada 4.5 Hz}
+    \label{fig:libre_angulo_tiempo_informe}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{out/Vibracion Forzada 4_8hz .png}
+    \caption{Ángulo vs tiempo para vibración Forzada 4.8 Hz.}
+    \label{fig:libre_angulo_tiempo_informe}
+\end{figure}
+
+
+A partir de los datos experimentales procesados para las frecuencias de excitación de $4.10\,\text{Hz}$, $4.50\,\text{Hz}$ y $4.80\,\text{Hz}$, y contrastándolos con el modelo teórico de un sistema de un grado de libertad (1GDL) bajo excitación rotacional sin amortiguamiento, se presentan las siguientes observaciones técnicas:
+
+\subsubsection{Caracterización del Régimen de Operación}
+El sistema operó con relaciones de frecuencia ($r = \omega_f / \omega_n$) comprendidas entre $20.5$ y $24.1$. Esto ubica al experimento profundamente en la \textbf{zona de aislamiento} o región de masa controlada (zona sismográfica), donde $r \gg 1$. En esta región, las fuerzas inerciales dominan sobre las fuerzas elásticas, y la teoría predice que la masa del sistema tiende a permanecer estacionaria en el espacio inercial mientras la base vibra.
+
+\subsubsection{Coherencia de la Fuerza de Excitación ($P_m$)}
+Se observa una correlación cuadrática consistente entre la frecuencia y la fuerza calculada. Al aumentar la frecuencia de $4.1\,\text{Hz}$ a $4.8\,\text{Hz}$ (un incremento del $\approx 17\%$), la fuerza de excitación aumentó de $1.68\,\text{N}$ a $2.31\,\text{N}$ (un incremento del $\approx 37\%$). Esto valida la consistencia del montaje experimental, confirmando que la fuerza de entrada obedece rigurosamente a la ley de fuerza centrífuga $F = m_h r \omega^2$.
+
+\subsubsection{Análisis del Factor de Amplificación y Respuesta Angular}
+Experimentalmente, la amplitud angular aumentó de $0.21^\circ$ a $0.63^\circ$ conforme aumentó la frecuencia. Existe una diferencia de dos órdenes de magnitud entre el Factor de Amplificación (FA) teórico ($\approx 0.002$) y el experimental ($\approx 0.40 - 0.66$).
+
+Como se puede observar en la Figura , aunque existe un desplazamiento vertical significativo entre la curva teórica y los puntos experimentales, la tendencia de los datos es estable.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{out/image.png}
+    \caption{fa vs r \cite{Rao_2016}}
+    \label{fig:libre_angulo_tiempo_informe}
+\end{figure}
+
+Esta discrepancia se atribuye principalmente a una \textbf{ganancia geométrica} no contemplada en el modelo simplificado. El cálculo teórico asume la medición en el radio del motor ($r=45\,\text{mm}$), mientras que el sensor LVDT se ubica en el extremo de la viga ($L \approx 840\,\text{mm}$), introduciendo un factor multiplicativo de $L/r \approx 18.6$. A pesar de esto, la estabilidad de los puntos experimentales en la Figura Fa vs r demuestra que el error es sistemático y no aleatorio.
+
+\subsubsection{Validación de Fase}
+Finalmente, el análisis de las señales temporales reveló un desfase de $\phi \approx -178^\circ$. Este resultado es coherente con la teoría de vibraciones mecánicas para un sistema sin amortiguamiento operando en la zona $r > 1$, confirmando que el movimiento de la masa se encuentra en contra-fase (oposición) a la dirección de la fuerza desbalanceada.
+
+
+
+\subsection{Vibración Libre Amortiguada}
+\subsubsection{Vibración Libre Amortiguada Abierta}
+\begin{table}[H]
+\centering
+\begin{tabular}{l c c}
+\toprule
+\textbf{Parámetro (unidades)} & \textbf{Símbolo} & \textbf{Valor obtenido} \\
+\midrule
+Tiempo pico inicial (ms) & $t_0$ & $-393.17257$ \\
+Amplitud pico inicial (mV) & $d_0$ & $96.08752$ \\
+Tiempo pico siguiente (ms) & $t_1$ & $-164.45193$ \\
+Amplitud pico siguiente (mV) & $d_1$ & $83.07137$ \\
+Período amortiguado (s) & $T_d$ & $0.22872$ \\
+Frecuencia angular amortiguada (rad/s) & $\omega_d$ & $27.47101$ \\
+Decremento logarítmico (--) & $\delta$ & $0.14556$ \\
+Factor de amortiguamiento (--) & $\zeta$ & $0.02316$ \\
+Frecuencia natural no amortiguada (rad/s) & $\omega_n$ & $27.4773$ \\
+Momento de inercia (kg\,$\cdot$\,m$^2$) & $I_0$ & $0.19026$ \\
+Amortiguamiento crítico (N\,m\,s/rad) & $C_{\text{crítico}}$ & $14.64$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+Los resultados obtenidos para la configuración con amortiguador abierto muestran que el sistema opera en un régimen subamortiguado, lo cual se evidencia en el valor del factor de amortiguamiento \(\zeta=0.02316\), extremadamente bajo. Este valor indica que la disipación presente en el sistema es mínima, como se espera cuando los discos del amortiguador están abiertos y la resistencia al movimiento del vástago es casi nula.
+
+El decremento logarítmico \(\delta=0.14556\) confirma que la amplitud se atenúa lentamente, lo cual es una característica típica de sistemas con bajo amortiguamiento. La diferencia entre la frecuencia amortiguada \(\omega_{d}=27.47\,\text{rad/s}\) y la frecuencia natural no amortiguada \(\omega_{n}=27.48\,\text{rad/s}\) es mínima, lo cual es coherente con valores de \(\zeta\) muy pequeños; en estos casos, la presencia del amortiguamiento apenas modifica la dinámica oscilatoria.
+
+Con respecto al comportamiento estructural, el momento de inercia respecto al pivote \(I_{0}=0.19026\,\text{kg·m}^{2}\) se encuentra dentro del rango esperado para la viga rígida utilizada, considerando las dimensiones físicas y el desplazamiento del centroide respecto al pivote. A partir de este valor, el amortiguamiento crítico calculado \(C_{\text{critico}}=14.64\,\text{N·m·s/rad}\) es bastante superior al amortiguamiento real del sistema, lo que indica que bajo esta configuración el sistema está muy lejos de alcanzar un comportamiento críticamente amortiguado.
+
+En conjunto, los resultados reflejan un sistema con disipación mínima, oscilaciones sostenidas durante varios ciclos y una dinámica prácticamente idéntica a la del caso ideal sin amortiguamiento, coincidiendo con el comportamiento esperado cuando el amortiguador se encuentra completamente abierto, permitiendo una oscilación casi libre.
+
+\subsubsection{Vibración Libre Amortiguada Cerrada}
+\begin{table}[H]
+\centering
+\begin{tabular}{l c c}
+\hline
+\textbf{Parámetro (unidades)} & \textbf{Símbolo} & \textbf{Valor obtenido} \\
+\hline
+Tiempo pico inicial (ms) & $t_0$ & -392.47644 \\
+Amplitud pico inicial (mV) & $d_0$ & 305.826 \\
+Tiempo pico siguiente (ms) & $t_1$ & -169.32636 \\
+Amplitud pico siguiente (mV) & $d_1$ & 265.923 \\
+Período amortiguado (s) & $T_d$ & 0.22315 \\
+Frecuencia angular amortiguada (rad/s) & $\omega_d$ & 28.15 \\
+Decremento logarítmico (--) & $\delta$ & 0.1398 \\
+Factor de amortiguamiento (--) & $\zeta$ & 0.02224 \\
+Frecuencia natural no amortiguada (rad/s) & $\omega_n$ & 28.1569 \\
+Momento de inercia  (kg\,m$^2$) & $I_0$ & 0.19026 \\
+Amortiguamiento crítico (N·m·s/rad) & $C_{\text{crítico}}$ & 14.63 \\
+\hline
+\end{tabular}
+\end{table}
+
+Los resultados obtenidos para la configuración con el amortiguador cerrado muestran nuevamente un comportamiento subamortiguado, aunque con una disipación algo mayor que en el caso abierto. Esto se evidencia en el decremento logarítmico $\delta = 0.1398$, apenas inferior al del sistema abierto, y en el factor de amortiguamiento $\zeta = 0.02224$, que sigue siendo muy bajo. Estos valores confirman que incluso con los discos cerrados, el amortiguador no logra introducir una resistencia suficientemente significativa como para acercarse al régimen críticamente amortiguado.
+
+El periodo amortiguado medido, $T_d = 0.22315 \, \text{s}$, conduce a una frecuencia amortiguada $\omega_d = 28.15 \, \text{rad/s}$. La frecuencia natural no amortiguada obtenida, $\omega_n = 28.1569 \, \text{rad/s}$, prácticamente coincide con la frecuencia amortiguada, lo cual es coherente con valores de $\zeta$ muy pequeños. Recordemos que en los sistemas con amortiguamiento bajo, la diferencia entre ambas frecuencias es mínima y la dinámica oscilatoria se mantiene casi igual a la del sistema sin disipación.
+
+Al evaluar el amortiguamiento crítico, cuyo valor resulta $C_{\text{crítico}} = 14.63 \, \text{N·m·s/rad}$, se observa que este sigue siendo enormemente superior al amortiguamiento efectivo del sistema. Esto implica que, aun con el amortiguador cerrado, la disipación real está muy por debajo de la necesaria para eliminar las oscilaciones. Por tanto, el sistema continúa comportándose como un oscilador subamortiguado manteniendo varios ciclos visibles antes de que la amplitud decaiga de forma notable.
+
+Finalmente, si se comparan estos resultados con los obtenidos en el caso con amortiguador abierto, se observa que las diferencias son pequeñas: el valor de $\zeta$ apenas aumenta, la amplitud sigue decayendo lentamente y la frecuencia natural prácticamente no se modifica. Esto sugiere que el sistema de discos utilizado introduce una resistencia al movimiento bastante limitada, y que su influencia en la dinámica del sistema es leve incluso cuando se encuentra completamente cerrado.
+
+Esto puede deberse a que, al momento de realizar el experimento, no se pudo asegurar una fijación precisa del mecanismo que abría y cerraba el amortiguador, por lo que es posible que este no se encontrara correctamente cerrado y ello sería la causa de que las diferencias entre ambos casos sean mínimas.
+
 
 \subsection{Vibración Forzada Amortiguada}
 
@@ -390,9 +939,6 @@ Posibles explicaciones para esta discrepancia:
 
 Las mediciones experimentales del desfase no lograron concordancia cuantitativa con la teoría debido a estas limitaciones metodológicas.
 
-\section{Discusiones}
-
-
 \section{Conclusiones}
 
 \subsection{Vibración Libre}
@@ -403,6 +949,23 @@ Las mediciones experimentales del desfase no lograron concordancia cuantitativa 
     \item El ángulo máximo de oscilación experimental $\theta_{max} = 0.012$ rad ($0.688^\circ$) proporciona información sobre las condiciones iniciales del sistema.
     \item Los valores obtenidos en este experimento establecen la base de referencia para caracterizar el comportamiento del sistema en condiciones de vibración forzada y amortiguada.
 \end{enumerate}
+
+\subsection{Vibración Forzada}
+
+El experimento se desarrolló en un régimen de alta frecuencia con relaciones $r = \omega_f/\omega_n$ entre $20.5$ y $24.1$, ubicando al sistema en la \textbf{zona sismográfica} (donde las fuerzas inerciales dominan). Esto se validó experimentalmente mediante el análisis de fase, obteniendo un desfase constante de $\phi \approx -178^\circ$, lo cual confirma que la masa oscila en contra-fase a la fuerza excitadora, tal como predice la teoría para sistemas sin amortiguamiento con $r \gg 1$.
+
+Respecto a la fuerza de excitación ($P_m$), se confirmó una correlación cuadrática precisa con la frecuencia ($P_m \propto \omega^2$), aumentando un $37\%$ en magnitud al incrementar la velocidad un $17\%$. Sin embargo, al analizar la respuesta de amplitud , se observa una discrepancia significativa entre el Factor de Amplificación (FA) teórico ($\approx 0.002$) y el experimental ($\approx 0.40 - 0.66$).
+
+
+Esta diferencia de magnitud no indica un fallo en el modelo dinámico, sino la presencia de una \textbf{ganancia geométrica de medición}. El modelo teórico asume el desplazamiento en el radio del motor ($r=45\text{ mm}$), mientras que el LVDT mide en el extremo de la viga ($L \approx 840\text{ mm}$), introduciendo un factor de escala de $L/r \approx 18.6$. A pesar de este desplazamiento vertical, la estabilidad de la tendencia experimental demuestra la consistencia sistémica del ensayo.
+
+
+\subsection{Vibración Libre Amortiguada}
+El estudio experimental de la vibración libre amortiguada permitió caracterizar el comportamiento dinámico de la viga en las configuraciones de amortiguador abierto y cerrado. En ambos casos, el sistema mostró un régimen claramente subamortiguado, evidenciado por los valores muy bajos de $\zeta$, que indican una disipación mínima y oscilaciones que persisten durante varios ciclos.
+
+Las diferencias entre las dos configuraciones fueron pequeñas: los valores de $\delta$, $\zeta$, $\omega_d$ y $\omega_n$ apenas variaron, lo que sugiere que el amortiguador introduce una resistencia limitada incluso en su posición cerrada. Esto pudo deberse también a dificultades en asegurar una fijación completamente efectiva del mecanismo durante la toma de datos.
+
+Finalmente, el valor de $C_{\text{crítico}}$ resultó muy superior al amortiguamiento experimental, confirmando que el sistema está lejos del régimen críticamente amortiguado y que su comportamiento corresponde al de un oscilador subamortiguado, tal como predice el modelo teórico.
 
 \subsection{Vibración Forzada Amortiguada}
 
@@ -415,8 +978,39 @@ Las mediciones experimentales del desfase no lograron concordancia cuantitativa 
 \end{enumerate}
 
 \bibliography{bibliografia}
-\bibliographystyle{IEEEtran}
+\begin{thebibliography}{99}
+
+\bibitem{Ewins2000}
+D. J. Ewins, \textit{Modal testing: theory, practice and application}, 2nd ed. Oxford: Butterworth-Heinemann, 2000.
+
+\bibitem{Inman2013}
+D. J. Inman, \textit{Engineering vibration}, 4th ed. Upper Saddle River, NJ: Pearson, 2013.
+
+\bibitem{DenHartog1985}
+J. P. Den Hartog, \textit{Mechanical vibrations}, 4th ed. New York: Dover, 1985.
+
+\bibitem{ISO_10816_1_1995}
+International Organization for Standardization, ``\textit{Mechanical vibration - Evaluation of machine vibration by measurements on non-rotating parts - Part 1: General guidelines},'' ISO 10816-1, 1995.
+
+\bibitem{Rao_2016}
+S. S. Rao, \textit{Vibration of continuous systems}, 2nd ed. Hoboken, NJ: Wiley, 2016.
+
+\bibitem{Hibbeler_2010}
+R. C. Hibbeler, \textit{Engineering mechanics: dynamics}, 12th ed. Upper Saddle River, NJ: Pearson, 2010.
+
+\bibitem{Guia_Vibraciones_UNAL}
+Universidad Nacional de Colombia, Facultad de Ingeniería, ``\textit{Guía de laboratorio: Vibraciones mecánicas},'' 2024.
+
+\bibitem{Beer_Dinamica_2010}
+F. P. Beer, E. R. Johnston Jr., and P. J. Cornwell, \textit{Vector mechanics for engineers: dynamics}, 9th ed. New York: McGraw-Hill, 2010.
+
+\end{thebibliography}
 
 \section{Anexos}
+Los archivos complementarios, scripts de procesamiento y datos experimentales se encuentran disponibles en la siguiente carpeta de Google Drive:
+
+\begin{center}
+\textbf{\href{https://drive.google.com/drive/folders/1yVeRbIiPPA2Mgfu3k8u8DFplFvqZZT_5?usp=sharing}{Carpeta Anexos}}
+\end{center}
 
 \end{document}
